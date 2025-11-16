@@ -20,7 +20,20 @@ const PORT = process.env.PORT || 3000;
 
 // Middlewares de sécurité
 app.use(helmet({
-  crossOriginResourcePolicy: { policy: "cross-origin" }
+  crossOriginResourcePolicy: { policy: "cross-origin" },
+  crossOriginOpenerPolicy: { policy: "same-origin-allow-popups" },
+  crossOriginEmbedderPolicy: false,
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      imgSrc: ["'self'", "data:", "https:", "http:"],
+      connectSrc: ["'self'", "https://api.openai.com", "https://api.elevenlabs.io"],
+      mediaSrc: ["'self'", "blob:"],
+      fontSrc: ["'self'", "data:"],
+    },
+  },
 }));
 app.use(cors({
   origin: '*',
