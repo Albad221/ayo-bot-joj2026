@@ -1,0 +1,119 @@
+{
+  "joj2026": {
+    "nom_complet": "Jeux Olympiques de la Jeunesse Dakar 2026",
+    "nom_court": "JOJ 2026",
+    "ville_hote": "Dakar",
+    "pays": "Sénégal",
+    "dates": {
+      "debut": "2026-10-31",
+      "fin": "2026-11-13",
+      "duree_jours": 14,
+      "annee": 2026,
+      "saison": "Automne"
+    },
+    "edition": {
+      "numero": 4,
+      "type": "Jeux Olympiques de la Jeunesse d'été",
+      "premiere_fois_afrique": true,
+      "premiere_fois_senegal": true
+    },
+    "participants": {
+      "athletes_attendus": "environ 3000-4000",
+      "pays_attendus": "plus de 200",
+      "age_athletes": "14-18 ans",
+      "sports": "environ 35 disciplines"
+    },
+    "vision": {
+      "slogan_principal": "L'Afrique accueille, Dakar célèbre",
+      "slogan_alternatif": "Grandir ensemble",
+      "slogan_english": "Africa welcomes, Dakar celebrates",
+      "slogan_wolof": "Afrig Dalal, Ndakaaru Jëmël",
+      "vision_globale": "Faire des JOJ un projet transformateur et porteur de renaissance africaine, servant de catalyseur pour le tourisme, l'art, la culture, les transports, les infrastructures et le développement durable",
+      "ambition": [
+        "Accompagner l'émergence du Sénégal et la transformation de l'Afrique",
+        "Laisser un héritage durable aux générations futures",
+        "Faire des JOJ un vivre-ensemble au service de la paix et de la cohésion sociale",
+        "Positionner le Sénégal comme hub sportif et touristique à haute valeur ajoutée"
+      ],
+      "objectifs": [
+        "Promouvoir les valeurs olympiques auprès de la jeunesse",
+        "Encourager l'adoption d'un mode de vie sain et actif",
+        "Favoriser l'éducation par le sport",
+        "Créer un héritage durable pour le Sénégal et l'Afrique",
+        "Célébrer la diversité culturelle",
+        "Promouvoir l'égalité des genres dans le sport",
+        "Assurer la sécurité et la qualité des infrastructures",
+        "Obtenir des résultats sportifs exemplaires",
+        "Promouvoir la culture et l'art africains",
+        "Améliorer la place des femmes dans le sport",
+        "Constituer un moteur économique et social"
+      ],
+      "themes": [
+        "Excellence sportive",
+        "Culture et éducation",
+        "Durabilité environnementale",
+        "Innovation et technologie",
+        "Engagement communautaire",
+        "Teranga (hospitalité sénégalaise)",
+        "Renaissance africaine"
+      ]
+    },
+    "valeurs_olympiques": [
+      "Excellence",
+      "Amitié",
+      "Respect",
+      "Fair-play",
+      "Solidarité",
+      "Inclusion"
+    ],
+    "heritage": {
+      "infrastructure": "Construction et rénovation d'installations sportives de classe mondiale",
+      "education": "Programmes d'éducation olympique dans les écoles",
+      "sport_jeunesse": "Développement de programmes sportifs pour la jeunesse sénégalaise",
+      "environnement": "Initiatives de durabilité et protection environnementale",
+      "economie": "Stimulation du tourisme et de l'économie locale",
+      "social": "Promotion de l'inclusion sociale par le sport"
+    },
+    "langue_officielle": ["Français", "Anglais"],
+    "timezone": "GMT (UTC+0)",
+    "devise_senegal": "Franc CFA (XOF)",
+    "contacts": {
+      "site_officiel": "https://www.olympics.com/fr/dakar-2026/",
+      "email_info": "info@dakar2026.sn",
+      "reseaux_sociaux": {
+        "facebook": "@Dakar2026",
+        "twitter": "@Dakar2026",
+        "instagram": "@dakar2026",
+        "youtube": "Dakar 2026"
+      }
+    },
+    "partenaires": {
+      "cio": "Comité International Olympique",
+      "cnoss": "Comité National Olympique et Sportif du Sénégal",
+      "gouvernement": "République du Sénégal",
+      "ville": "Ville de Dakar"
+    }
+  },
+  "faq": [
+    {
+      "question": "Qu'est-ce que les Jeux Olympiques de la Jeunesse?",
+      "reponse": "Les Jeux Olympiques de la Jeunesse (JOJ) sont une compétition sportive internationale pour les jeunes athlètes âgés de 14 à 18 ans. Créés par le CIO en 2010, ils combinent sport de haut niveau, éducation et culture."
+    },
+    {
+      "question": "Pourquoi Dakar a été choisi?",
+      "reponse": "Dakar a été choisi en 2018 pour organiser les JOJ 2026, devenant ainsi la première ville africaine à accueillir cet événement olympique. Ce choix reflète l'engagement du CIO envers l'Afrique et reconnaît le dynamisme du Sénégal."
+    },
+    {
+      "question": "Comment puis-je assister aux JOJ 2026?",
+      "reponse": "Les billets seront disponibles via le site officiel et les points de vente autorisés. Les informations sur la billetterie seront communiquées progressivement avant l'événement."
+    },
+    {
+      "question": "Puis-je devenir bénévole?",
+      "reponse": "Oui! Un programme de bénévolat sera lancé avant les jeux. Les candidats doivent avoir au moins 18 ans et peuvent s'inscrire via le site officiel."
+    },
+    {
+      "question": "Quels sports seront au programme?",
+      "reponse": "Les JOJ 2026 présenteront environ 35 disciplines olympiques incluant l'athlétisme, la natation, le basketball, le football, le judo, et bien d'autres. Certains sports traditionnels africains pourraient également être inclus."
+    }
+  ]
+}

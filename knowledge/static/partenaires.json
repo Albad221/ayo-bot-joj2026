@@ -1,0 +1,148 @@
+{
+  "partenaires_officiels": {
+    "partenaires_olympiques_mondiaux": [
+      {
+        "nom": "Airbnb",
+        "categorie": "Partenaire Olympique Mondial",
+        "secteur": "Hébergement et tourisme",
+        "role": "Plateforme d'hébergement officielle"
+      },
+      {
+        "nom": "Alibaba Group",
+        "categorie": "Partenaire Olympique Mondial",
+        "secteur": "E-commerce et cloud",
+        "role": "Services cloud et commerce électronique"
+      },
+      {
+        "nom": "Allianz",
+        "categorie": "Partenaire Olympique Mondial",
+        "secteur": "Assurance",
+        "role": "Partenaire assurance officiel"
+      },
+      {
+        "nom": "Coca-Cola",
+        "categorie": "Partenaire Olympique Mondial",
+        "secteur": "Boissons",
+        "role": "Partenaire boissons officiel"
+      },
+      {
+        "nom": "Deloitte",
+        "categorie": "Partenaire Olympique Mondial",
+        "secteur": "Services professionnels",
+        "role": "Conseil et services professionnels"
+      },
+      {
+        "nom": "Omega",
+        "categorie": "Partenaire Olympique Mondial",
+        "secteur": "Horlogerie",
+        "role": "Chronométrage officiel et horloge compte à rebours"
+      },
+      {
+        "nom": "Procter & Gamble (P&G)",
+        "categorie": "Partenaire Olympique Mondial",
+        "secteur": "Produits de consommation",
+        "role": "Partenaire produits de consommation"
+      },
+      {
+        "nom": "Samsung",
+        "categorie": "Partenaire Olympique Mondial",
+        "secteur": "Technologie et électronique",
+        "role": "Partenaire technologie officiel"
+      },
+      {
+        "nom": "Visa",
+        "categorie": "Partenaire Olympique Mondial",
+        "secteur": "Services de paiement",
+        "role": "Services de paiement officiels"
+      }
+    ],
+    "partenaires_premium": [
+      {
+        "nom": "Sonatel",
+        "categorie": "Partenaire Premium",
+        "secteur": "Télécommunications",
+        "origine": "Sénégal",
+        "role": "Opérateur télécom et services digitaux",
+        "description": "Leader des télécommunications au Sénégal"
+      }
+    ],
+    "partenaires_locaux": [
+      {
+        "nom": "Air Sénégal",
+        "categorie": "Partenaire Officiel",
+        "secteur": "Transport aérien",
+        "origine": "Sénégal",
+        "role": "Compagnie aérienne officielle",
+        "description": "Compagnie aérienne nationale du Sénégal"
+      },
+      {
+        "nom": "SOCOCIM",
+        "categorie": "Partenaire Officiel",
+        "secteur": "Cimenterie et construction",
+        "origine": "Sénégal",
+        "role": "Fournisseur matériaux de construction",
+        "description": "Leader de la cimenterie au Sénégal"
+      }
+    ],
+    "partenaires_institutionnels": [
+      {
+        "nom": "Comité International Olympique (CIO)",
+        "role": "Organisation olympique mondiale",
+        "president": "Kirsty Coventry"
+      },
+      {
+        "nom": "Comité National Olympique et Sportif Sénégalais (CNOSS)",
+        "role": "Comité olympique national",
+        "president": "Mamadou Diagna Ndiaye"
+      },
+      {
+        "nom": "Gouvernement du Sénégal",
+        "role": "Soutien institutionnel et financier",
+        "president": "Bassirou Diomaye Faye",
+        "premier_ministre": "Ousmane Sonko"
+      },
+      {
+        "nom": "Ministère de la Jeunesse et des Sports",
+        "ministre": "Khady Diène Gaye",
+        "role": "Coordination nationale"
+      },
+      {
+        "nom": "Agence de Développement Municipal (ADM)",
+        "role": "Développement infrastructures"
+      },
+      {
+        "nom": "Banque Mondiale",
+        "role": "Financement programme PROGEP2"
+      }
+    ]
+  },
+  "informations_partenariats": {
+    "categories": [
+      "Partenaires Olympiques Mondiaux (TOP Programme)",
+      "Partenaires Premium",
+      "Partenaires Officiels",
+      "Fournisseurs Officiels"
+    ],
+    "benefices_partenaires": [
+      "Association à la marque olympique",
+      "Visibilité internationale",
+      "Activation marketing pendant les JOJ",
+      "Accès aux plateformes olympiques",
+      "Opportunités de networking"
+    ],
+    "opportunites": {
+      "ami_appels_offres": "Le comité lance régulièrement des appels à manifestations d'intérêt",
+      "contact": "Via le site officiel JOJ Dakar 2026",
+      "secteurs_recherches": [
+        "Services",
+        "Technologie",
+        "Construction",
+        "Transport",
+        "Hôtellerie",
+        "Restauration",
+        "Sécurité",
+        "Médias"
+      ]
+    }
+  }
+}

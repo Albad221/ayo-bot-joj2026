@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Ayo - Simple</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 { color: #e67e22; text-align: center; }
+        #messages {
+            background: white;
+            border: 2px solid #e67e22;
+            border-radius: 10px;
+            padding: 20px;
+            height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+        .user { background: #3498db; color: white; text-align: right; }
+        .bot { background: #ecf0f1; }
+        .message h2, .message h3, .message h4 {
+            margin: 10px 0 5px 0;
+            color: #e67e22;
+        }
+        .message h2 { font-size: 1.3em; }
+        .message h3 { font-size: 1.2em; }
+        .message h4 { font-size: 1.1em; }
+        #input-area {
+            display: flex;
+            gap: 10px;
+        }
+        #userInput {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #e67e22;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover { background: #d35400; }
+        .status {
+            text-align: center;
+            margin: 10px 0;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <h1>🦁 Chat avec Ayo</h1>
+    <div class="status" id="status">Serveur: http://127.0.0.1:3002</div>
+
+    <div id="messages">
+        <div class="message bot">
+            <strong>Ayo:</strong> Bonjour! Je suis Ayo, la mascotte des JOJ Dakar 2026! 🦁<br>
+            Comment puis-je t'aider?
+        </div>
+    </div>
+
+    <div id="input-area">
+        <input
+            type="text"
+            id="userInput"
+            placeholder="Tapez votre question ici..."
+            onkeypress="if(event.key==='Enter') sendMessage()"
+        >
+        <button onclick="sendMessage()">Envoyer</button>
+    </div>
+
+    <script>
+        const sessionId = 'simple_' + Date.now();
+
+        function formatMarkdown(text) {
+            // Convertir markdown en HTML
+            return text
+                // Titres
+                .replace(/### (.*?)$/gm, '<h4>$1</h4>')
+                .replace(/## (.*?)$/gm, '<h3>$1</h3>')
+                .replace(/# (.*?)$/gm, '<h2>$1</h2>')
+                // Gras
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                // Italique
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                // Listes à puces
+                .replace(/^- (.*?)$/gm, '• $1')
+                // Sauts de ligne
+                .replace(/\n/g, '<br>');
+        }
+
+        function addMessage(text, isUser) {
+            const div = document.createElement('div');
+            div.className = 'message ' + (isUser ? 'user' : 'bot');
+            const formattedText = isUser ? text : formatMarkdown(text);
+            div.innerHTML = '<strong>' + (isUser ? 'Vous' : 'Ayo') + ':</strong> ' + formattedText;
+            document.getElementById('messages').appendChild(div);
+            document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            addMessage(message, true);
+            input.value = '';
+
+            document.getElementById('status').textContent = 'Ayo réfléchit...';
+
+            try {
+                const response = await fetch('http://127.0.0.1:3002/api/chat', {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ message, sessionId })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    addMessage(data.response, false);
+                    document.getElementById('status').textContent = 'Connecté ✓';
+                } else {
+                    addMessage('Erreur: ' + (data.error || 'Problème inconnu'), false);
+                    document.getElementById('status').textContent = 'Erreur!';
+                }
+            } catch (error) {
+                addMessage('❌ Impossible de se connecter au serveur. Vérifiez que le serveur tourne sur le port 3002.', false);
+                document.getElementById('status').textContent = 'Serveur inaccessible!';
+                console.error(error);
+            }
+        }
+
+        // Test de connexion au démarrage
+        fetch('http://127.0.0.1:3002/health')
+            .then(r => r.json())
+            .then(d => {
+                document.getElementById('status').textContent = 'Connecté ✓ - ' + d.service;
+            })
+            .catch(() => {
+                document.getElementById('status').textContent = '⚠️ Serveur non accessible';
+            });
+    </script>
+</body>
+</html>

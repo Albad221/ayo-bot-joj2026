@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat avec Ayo - JOJ Dakar 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #e5ddd5;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .whatsapp-container {
+            width: 100%;
+            max-width: 1000px;
+            height: 90vh;
+            max-height: 800px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .chat-header {
+            background: #075e54;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-name {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .contact-status {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #25d366;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        /* Messages Area */
+        .messages-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: #e5ddd5;
+            background-image:
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(255, 255, 255, 0.03) 10px,
+                    rgba(255, 255, 255, 0.03) 20px
+                );
+        }
+
+        .messages-container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .messages-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .messages-container::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .message {
+            display: flex;
+            margin-bottom: 12px;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message.bot {
+            justify-content: flex-start;
+        }
+
+        .message-bubble {
+            max-width: 65%;
+            padding: 8px 12px;
+            border-radius: 8px;
+            position: relative;
+            word-wrap: break-word;
+        }
+
+        .message.bot .message-bubble {
+            background: white;
+            border-radius: 0 8px 8px 8px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .message.user .message-bubble {
+            background: #dcf8c6;
+            border-radius: 8px 0 8px 8px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-text {
+            font-size: 14.5px;
+            line-height: 1.5;
+            color: #303030;
+            margin-bottom: 5px;
+        }
+
+        .message-text h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #075e54;
+        }
+
+        .message-text h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 12px;
+            margin-bottom: 6px;
+            color: #128c7e;
+        }
+
+        .message-text strong {
+            font-weight: 600;
+            color: #000;
+        }
+
+        .message-text ul {
+            margin-left: 18px;
+            margin-top: 5px;
+        }
+
+        .message-text li {
+            margin-bottom: 3px;
+        }
+
+        .message-time {
+            font-size: 11px;
+            color: rgba(0, 0, 0, 0.45);
+            text-align: right;
+            margin-top: 4px;
+        }
+
+        .message.user .message-time {
+            color: rgba(0, 0, 0, 0.45);
+        }
+
+        /* Typing Indicator */
+        .typing-indicator {
+            display: none;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            width: 70px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .typing-indicator.active {
+            display: block;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #90949c;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
+        }
+
+        /* Input Area */
+        .input-container {
+            background: #f0f0f0;
+            padding: 10px 15px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
+        }
+
+        .input-wrapper {
+            flex: 1;
+            background: white;
+            border-radius: 25px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #messageInput {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 15px;
+            font-family: inherit;
+            resize: none;
+            max-height: 100px;
+            overflow-y: auto;
+        }
+
+        #messageInput::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        #messageInput::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .emoji-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+
+        .emoji-btn:hover {
+            opacity: 1;
+        }
+
+        .send-btn {
+            width: 45px;
+            height: 45px;
+            background: #25d366;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .send-btn:hover {
+            background: #20bd5a;
+            transform: scale(1.05);
+        }
+
+        .send-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Quick Replies */
+        .quick-replies {
+            display: flex;
+            gap: 8px;
+            padding: 10px 20px;
+            background: #f7f7f7;
+            overflow-x: auto;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .quick-replies::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .quick-replies::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .quick-reply-btn {
+            padding: 8px 16px;
+            background: white;
+            border: 1px solid #25d366;
+            border-radius: 20px;
+            color: #25d366;
+            font-size: 13px;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quick-reply-btn:hover {
+            background: #25d366;
+            color: white;
+        }
+
+        /* Welcome Message */
+        .welcome {
+            text-align: center;
+            padding: 20px;
+            margin: 20px;
+            background: #fffbcc;
+            border-radius: 10px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .welcome h3 {
+            color: #075e54;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .welcome p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .whatsapp-container {
+                max-width: 100%;
+                height: 100vh;
+                max-height: 100vh;
+                border-radius: 0;
+            }
+
+            .message-bubble {
+                max-width: 80%;
+            }
+
+            body {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="whatsapp-container">
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="avatar">
+                <img src="assets/images/ayo.png" alt="Ayo" onerror="this.src='assets/images/ayo.jpg'">
+            </div>
+            <div class="contact-info">
+                <div class="contact-name">🦁 Ayo - JOJ Dakar 2026</div>
+                <div class="contact-status">
+                    <span class="status-dot"></span>
+                    en ligne
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Replies -->
+        <div class="quick-replies">
+            <button class="quick-reply-btn" onclick="sendQuickReply('💼 Sponsors')">💼 Sponsors</button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('⭐ Ambassadeurs')">⭐ Ambassadeurs</button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('🏅 Sports')">🏅 Sports</button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('🎉 Programmes')">🎉 Programmes</button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('📅 Dates importantes')">📅 Dates</button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('🎫 Billets')">🎫 Billets</button>
+        </div>
+
+        <!-- Messages -->
+        <div class="messages-container" id="messagesContainer">
+            <div class="welcome">
+                <div class="welcome-icon">🦁</div>
+                <h3>Yow! Bienvenue!</h3>
+                <p>Je suis Ayo, votre guide officiel des Jeux Olympiques de la Jeunesse Dakar 2026! Posez-moi vos questions sur les sports, les ambassadeurs, les partenaires, les programmes ou tout ce que vous voulez savoir!</p>
+            </div>
+        </div>
+
+        <!-- Typing Indicator -->
+        <div class="message bot" style="margin-left: 20px;">
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-dots">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input -->
+        <div class="input-container">
+            <div class="input-wrapper">
+                <button class="emoji-btn">😊</button>
+                <textarea
+                    id="messageInput"
+                    placeholder="Tapez un message"
+                    rows="1"
+                    onkeydown="handleKeyPress(event)"
+                ></textarea>
+            </div>
+            <button class="send-btn" onclick="sendMessage()">
+                ➤
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://127.0.0.1:3002';
+        let sessionId = 'whatsapp-' + Date.now();
+
+        function formatMarkdown(text) {
+            return text
+                .replace(/### (.*?)$/gm, '<h4>$1</h4>')
+                .replace(/## (.*?)$/gm, '<h3>$1</h3>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/^- (.*?)$/gm, '• $1')
+                .replace(/\n/g, '<br>');
+        }
+
+        function getCurrentTime() {
+            const now = new Date();
+            return now.getHours().toString().padStart(2, '0') + ':' +
+                   now.getMinutes().toString().padStart(2, '0');
+        }
+
+        function addMessage(text, isUser = false) {
+            const container = document.getElementById('messagesContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+
+            const bubble = document.createElement('div');
+            bubble.className = 'message-bubble';
+
+            const textDiv = document.createElement('div');
+            textDiv.className = 'message-text';
+            textDiv.innerHTML = formatMarkdown(text);
+
+            const timeDiv = document.createElement('div');
+            timeDiv.className = 'message-time';
+            timeDiv.textContent = getCurrentTime();
+
+            bubble.appendChild(textDiv);
+            bubble.appendChild(timeDiv);
+            messageDiv.appendChild(bubble);
+            container.appendChild(messageDiv);
+
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function showTyping() {
+            const indicator = document.getElementById('typingIndicator');
+            indicator.classList.add('active');
+            const container = document.getElementById('messagesContainer');
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function hideTyping() {
+            const indicator = document.getElementById('typingIndicator');
+            indicator.classList.remove('active');
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            addMessage(message, true);
+            input.value = '';
+            input.style.height = 'auto';
+
+            showTyping();
+
+            try {
+                const response = await fetch(`${API_URL}/api/chat`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        sessionId: sessionId
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Erreur serveur');
+                }
+
+                const data = await response.json();
+                hideTyping();
+
+                setTimeout(() => {
+                    addMessage(data.response);
+                }, 300);
+
+            } catch (error) {
+                hideTyping();
+                setTimeout(() => {
+                    addMessage('Désolé, je rencontre un problème de connexion. Vérifiez que le serveur est bien démarré sur le port 3002. 🔌');
+                }, 300);
+                console.error('Erreur:', error);
+            }
+        }
+
+        function sendQuickReply(text) {
+            document.getElementById('messageInput').value = text;
+            sendMessage();
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        }
+
+        // Auto-resize textarea
+        document.getElementById('messageInput').addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+        });
+
+        // Test server connection on load
+        window.addEventListener('load', async () => {
+            try {
+                const response = await fetch(`${API_URL}/health`);
+                if (response.ok) {
+                    console.log('✅ Serveur connecté');
+                }
+            } catch (error) {
+                console.error('❌ Serveur non accessible:', error);
+                setTimeout(() => {
+                    addMessage('⚠️ Attention: Le serveur ne semble pas accessible. Assurez-vous qu\'il est bien démarré sur le port 3002.');
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>

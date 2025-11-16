@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Ayo Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 500px;
+        }
+        h1 { color: #333; margin-bottom: 20px; }
+        .instructions {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        #dropZone {
+            border: 3px dashed #667eea;
+            border-radius: 10px;
+            padding: 60px 40px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #f8f9ff;
+        }
+        #dropZone:hover {
+            border-color: #764ba2;
+            background: #f0f1ff;
+        }
+        #dropZone.drag-over {
+            border-color: #764ba2;
+            background: #e8e9ff;
+            transform: scale(1.02);
+        }
+        .upload-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        #preview {
+            margin-top: 30px;
+            display: none;
+        }
+        #preview img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .success {
+            color: #27ae60;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🦁 Upload Ayo Image</h1>
+        <div class="instructions">
+            Drag and drop the Ayo mascot PNG image here,<br>
+            or click to select the file
+        </div>
+
+        <div id="dropZone">
+            <div class="upload-icon">📁</div>
+            <div>Drop Ayo image here or click to browse</div>
+            <input type="file" id="fileInput" accept="image/png,image/jpeg" style="display: none;">
+        </div>
+
+        <div id="preview">
+            <img id="previewImg" alt="Preview">
+            <div class="success">✅ Image loaded! Click Save to finish</div>
+            <button class="button" onclick="saveImage()">Save to Project</button>
+        </div>
+    </div>
+
+    <script>
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const preview = document.getElementById('preview');
+        const previewImg = document.getElementById('previewImg');
+        let selectedFile = null;
+
+        // Click to upload
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        // File selection
+        fileInput.addEventListener('change', (e) => {
+            handleFile(e.target.files[0]);
+        });
+
+        // Drag and drop
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('drag-over');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('drag-over');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('drag-over');
+            handleFile(e.dataTransfer.files[0]);
+        });
+
+        function handleFile(file) {
+            if (!file || !file.type.match('image.*')) {
+                alert('Please select an image file');
+                return;
+            }
+
+            selectedFile = file;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                previewImg.src = e.target.result;
+                preview.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function saveImage() {
+            if (!selectedFile) return;
+
+            const reader = new FileReader();
+            reader.onload = async (e) => {
+                const base64 = e.target.result;
+
+                // Download the image
+                const link = document.createElement('a');
+                link.href = base64;
+                link.download = 'ayo.png';
+                link.click();
+
+                alert('✅ Image downloaded!\n\nPlease move it to:\nadmin/assets/images/ayo.png');
+            };
+            reader.readAsDataURL(selectedFile);
+        }
+    </script>
+</body>
+</html>

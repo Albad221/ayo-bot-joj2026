@@ -1,0 +1,261 @@
+{
+  "sports_olympiques": [
+    {
+      "categorie": "Athlétisme",
+      "disciplines": [
+        "Sprint (100m, 200m, 400m)",
+        "Demi-fond (800m, 1500m)",
+        "Haies",
+        "Relais",
+        "Saut en hauteur",
+        "Saut en longueur",
+        "Triple saut",
+        "Saut à la perche",
+        "Lancer du poids",
+        "Lancer du disque",
+        "Lancer du javelot"
+      ],
+      "description": "L'athlétisme est au coeur des Jeux Olympiques et teste la vitesse, l'endurance, la force et la technique des jeunes athlètes."
+    },
+    {
+      "categorie": "Natation",
+      "disciplines": [
+        "Nage libre (50m, 100m, 200m, 400m)",
+        "Dos (100m, 200m)",
+        "Brasse (100m, 200m)",
+        "Papillon (100m, 200m)",
+        "4 nages individuel",
+        "Relais"
+      ],
+      "description": "La natation développe l'endurance et la technique aquatique des jeunes talents."
+    },
+    {
+      "categorie": "Sports collectifs",
+      "sports": [
+        {
+          "nom": "Basketball",
+          "format": "3x3 et 5x5",
+          "description": "Basketball traditionnel et sa variante urbaine 3x3"
+        },
+        {
+          "nom": "Football",
+          "format": "11 contre 11",
+          "description": "Le sport le plus populaire au monde, très apprécié au Sénégal"
+        },
+        {
+          "nom": "Handball",
+          "format": "Équipes de 7 joueurs",
+          "description": "Sport d'équipe dynamique et spectaculaire"
+        },
+        {
+          "nom": "Volleyball",
+          "format": "Intérieur et beach volley",
+          "description": "Volleyball en salle et sur sable"
+        },
+        {
+          "nom": "Hockey sur gazon",
+          "format": "11 contre 11",
+          "description": "Sport d'équipe technique et rapide"
+        }
+      ]
+    },
+    {
+      "categorie": "Sports de combat",
+      "sports": [
+        {
+          "nom": "Judo",
+          "description": "Art martial japonais populaire en Afrique, discipline où le Sénégal excelle"
+        },
+        {
+          "nom": "Taekwondo",
+          "description": "Art martial coréen axé sur les coups de pied"
+        },
+        {
+          "nom": "Boxe",
+          "description": "Sport de combat noble et technique"
+        },
+        {
+          "nom": "Lutte",
+          "description": "Sport traditionnel très populaire au Sénégal (la lutte sénégalaise est un patrimoine culturel)"
+        },
+        {
+          "nom": "Karaté",
+          "description": "Art martial japonais de percussion"
+        }
+      ]
+    },
+    {
+      "categorie": "Sports aquatiques",
+      "sports": [
+        {
+          "nom": "Plongeon",
+          "description": "Plongeon de haut vol et tremplin"
+        },
+        {
+          "nom": "Water-polo",
+          "description": "Sport collectif aquatique"
+        },
+        {
+          "nom": "Natation artistique",
+          "description": "Anciennement natation synchronisée"
+        }
+      ]
+    },
+    {
+      "categorie": "Gymnastique",
+      "disciplines": [
+        "Gymnastique artistique",
+        "Gymnastique rythmique",
+        "Trampoline"
+      ],
+      "description": "Sports alliant force, souplesse et grâce"
+    },
+    {
+      "categorie": "Sports cyclistes",
+      "disciplines": [
+        "Cyclisme sur route",
+        "VTT (cross-country)",
+        "BMX freestyle",
+        "BMX racing"
+      ],
+      "description": "Diverses disciplines cyclistes pour tous les styles"
+    },
+    {
+      "categorie": "Sports de raquette",
+      "sports": [
+        {
+          "nom": "Tennis",
+          "format": "Simple et double",
+          "description": "Sport de raquette individuel ou en équipe"
+        },
+        {
+          "nom": "Tennis de table",
+          "format": "Simple et double",
+          "description": "Ping-pong olympique, sport rapide et technique"
+        },
+        {
+          "nom": "Badminton",
+          "format": "Simple et double",
+          "description": "Sport de raquette avec volant"
+        }
+      ]
+    },
+    {
+      "categorie": "Sports nautiques",
+      "sports": [
+        {
+          "nom": "Voile",
+          "description": "Profitant du littoral atlantique de Dakar"
+        },
+        {
+          "nom": "Aviron",
+          "description": "Sport d'endurance et de synchronisation"
+        },
+        {
+          "nom": "Canoë-Kayak",
+          "description": "Sprint et slalom"
+        }
+      ]
+    },
+    {
+      "categorie": "Sports de précision",
+      "sports": [
+        {
+          "nom": "Tir à l'arc",
+          "description": "Sport de concentration et précision"
+        },
+        {
+          "nom": "Tir sportif",
+          "description": "Carabine et pistolet"
+        },
+        {
+          "nom": "Escrime",
+          "description": "Fleuret, épée et sabre"
+        }
+      ]
+    },
+    {
+      "categorie": "Autres sports",
+      "sports": [
+        {
+          "nom": "Haltérophilie",
+          "description": "Sport de force olympique"
+        },
+        {
+          "nom": "Équitation",
+          "description": "Saut d'obstacles et dressage"
+        },
+        {
+          "nom": "Triathlon",
+          "description": "Natation, cyclisme et course à pied"
+        },
+        {
+          "nom": "Pentathlon moderne",
+          "description": "Combinaison de cinq disciplines"
+        },
+        {
+          "nom": "Rugby à 7",
+          "description": "Version à effectif réduit du rugby"
+        },
+        {
+          "nom": "Golf",
+          "description": "Sport de précision et stratégie"
+        }
+      ]
+    }
+  ],
+  "sports_nouveaux": {
+    "description": "Les JOJ incluent souvent de nouveaux sports urbains et populaires auprès des jeunes",
+    "possibles": [
+      "Skateboard",
+      "Escalade sportive",
+      "Surf",
+      "Breaking (danse break)",
+      "Sports électroniques (e-sports)"
+    ]
+  },
+  "sports_demonstration": {
+    "description": "Sports africains traditionnels qui pourraient être présentés en démonstration",
+    "exemples": [
+      {
+        "nom": "Lutte sénégalaise (Laamb)",
+        "description": "Sport national du Sénégal, combinaison de lutte et de frappe, avec rituels traditionnels"
+      },
+      {
+        "nom": "Morabaraba",
+        "description": "Jeu de stratégie traditionnel africain"
+      }
+    ]
+  },
+  "egalite_genres": {
+    "description": "Les JOJ promeuvent l'égalité des genres dans le sport",
+    "principes": [
+      "Nombre égal d'épreuves masculines et féminines",
+      "Épreuves mixtes encouragées",
+      "Promotion du sport féminin en Afrique",
+      "Égalité de traitement médiatique"
+    ]
+  },
+  "particularites_senegal": {
+    "sports_populaires": [
+      "Football (sport le plus populaire)",
+      "Lutte sénégalaise (sport national)",
+      "Basketball (en croissance)",
+      "Athlétisme (tradition de champions)",
+      "Judo (excellents résultats internationaux)"
+    ],
+    "champions_senegalais": "Le Sénégal a produit de nombreux champions olympiques et mondiaux, particulièrement en athlétisme et en lutte"
+  },
+  "education_olympique": {
+    "description": "Au-delà de la compétition, les JOJ incluent un programme éducatif",
+    "themes": [
+      "Valeurs olympiques",
+      "Fair-play et respect",
+      "Santé et nutrition",
+      "Lutte contre le dopage",
+      "Carrière après le sport",
+      "Engagement social",
+      "Durabilité environnementale"
+    ]
+  }
+}

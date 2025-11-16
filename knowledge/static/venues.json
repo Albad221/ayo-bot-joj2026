@@ -1,0 +1,228 @@
+{
+  "sites_competition": {
+    "dakar_metropolitan": {
+      "description": "La majorité des compétitions se dérouleront dans la région de Dakar et ses environs",
+      "avantages": [
+        "Infrastructure sportive de qualité",
+        "Accessibilité facile",
+        "Hébergement suffisant",
+        "Transports développés"
+      ]
+    },
+    "sites_principaux": [
+      {
+        "nom": "Stade Abdoulaye Wade (Stade de Diamniadio)",
+        "capacite": "50000 places",
+        "localisation": "Diamniadio (à 30km de Dakar)",
+        "sports": [
+          "Cérémonie d'ouverture",
+          "Cérémonie de clôture",
+          "Athlétisme",
+          "Football"
+        ],
+        "statut": "Existant (inauguré en 2022)",
+        "description": "Stade ultramoderne, fierté du Sénégal, infrastructure de classe mondiale"
+      },
+      {
+        "nom": "Stade Lat Dior",
+        "localisation": "Thiès (à 70km de Dakar)",
+        "sports": ["Athlétisme", "Football"],
+        "statut": "Existant, possiblement à rénover",
+        "description": "Stade historique du Sénégal"
+      },
+      {
+        "nom": "Stade Léopold Sédar Senghor",
+        "capacite": "60000 places",
+        "localisation": "Centre de Dakar",
+        "sports": ["Football", "Athlétisme"],
+        "statut": "Existant",
+        "description": "Stade emblématique de Dakar, lieu historique du sport sénégalais"
+      },
+      {
+        "nom": "Arène Nationale de Lutte",
+        "capacite": "20000 places",
+        "localisation": "Pikine, Dakar",
+        "sports": ["Lutte", "Judo", "Sports de combat"],
+        "statut": "Existant (inauguré en 2022)",
+        "description": "Infrastructure moderne dédiée à la lutte sénégalaise et sports de combat"
+      },
+      {
+        "nom": "Dakar Arena",
+        "capacite": "15000 places",
+        "localisation": "Diamniadio",
+        "sports": [
+          "Basketball",
+          "Handball",
+          "Volleyball",
+          "Sports en salle"
+        ],
+        "statut": "Existant (inauguré en 2018)",
+        "description": "Salle multisports ultramoderne, l'une des plus grandes d'Afrique de l'Ouest"
+      },
+      {
+        "nom": "Complexe sportif Dakar Arène 2",
+        "localisation": "Dakar",
+        "sports": ["Boxe", "Taekwondo", "Karaté", "Arts martiaux"],
+        "statut": "À confirmer",
+        "description": "Site pour les sports de combat"
+      },
+      {
+        "nom": "Piscine Olympique de l'UCAD",
+        "localisation": "Université Cheikh Anta Diop, Dakar",
+        "sports": ["Natation", "Plongeon", "Water-polo", "Natation artistique"],
+        "statut": "Existant, possiblement à rénover",
+        "description": "Piscine universitaire pouvant accueillir des compétitions"
+      },
+      {
+        "nom": "Centre Aquatique (à construire ou identifier)",
+        "sports": ["Sports aquatiques"],
+        "statut": "À confirmer",
+        "description": "Infrastructure pour les sports nautiques"
+      },
+      {
+        "nom": "Complexe de Tennis",
+        "localisation": "À déterminer",
+        "sports": ["Tennis"],
+        "statut": "À confirmer",
+        "description": "Courts de tennis de niveau international"
+      },
+      {
+        "nom": "Salle de Gymnastique",
+        "localisation": "À déterminer",
+        "sports": ["Gymnastique artistique", "Gymnastique rythmique", "Trampoline"],
+        "statut": "À confirmer",
+        "description": "Salle spécialisée pour la gymnastique"
+      },
+      {
+        "nom": "Vélodrome / Pistes cyclables",
+        "localisation": "À déterminer",
+        "sports": ["Cyclisme sur piste", "VTT", "BMX"],
+        "statut": "À confirmer",
+        "description": "Infrastructures cyclistes"
+      },
+      {
+        "nom": "Sites nautiques - Littoral atlantique",
+        "localisation": "Côte de Dakar (N'Gor, Yoff, Almadies)",
+        "sports": ["Voile", "Surf", "Sports nautiques"],
+        "statut": "Sites naturels existants",
+        "description": "Profitant de la magnifique côte atlantique de Dakar"
+      },
+      {
+        "nom": "Terrain de Beach Volleyball",
+        "localisation": "Plages de Dakar",
+        "sports": ["Beach volleyball"],
+        "statut": "À aménager",
+        "description": "Terrains sur les plages de Dakar"
+      },
+      {
+        "nom": "Parcours de Golf",
+        "localisation": "À déterminer (possiblement Club de Golf de Dakar)",
+        "sports": ["Golf"],
+        "statut": "À confirmer",
+        "description": "Parcours de golf standard international"
+      },
+      {
+        "nom": "Centre de Tir",
+        "localisation": "À déterminer",
+        "sports": ["Tir sportif", "Tir à l'arc"],
+        "statut": "À confirmer",
+        "description": "Installations pour les sports de précision"
+      }
+    ],
+    "village_olympique": {
+      "description": "Hébergement des athlètes pendant les jeux",
+      "localisation": "Probablement à Diamniadio ou dans la région de Dakar",
+      "capacite": "Environ 3000-4000 athlètes et officiels",
+      "services": [
+        "Chambres confortables",
+        "Restauration internationale",
+        "Salles de fitness",
+        "Espaces de détente",
+        "Services médicaux",
+        "Espaces éducatifs et culturels",
+        "Sécurité 24/7"
+      ],
+      "statut": "En planification"
+    },
+    "centre_presse": {
+      "description": "Centre international de presse pour les médias du monde entier",
+      "services": [
+        "Salles de travail",
+        "Connexion internet haut débit",
+        "Salles de conférence de presse",
+        "Studios TV et radio",
+        "Services techniques"
+      ]
+    }
+  },
+  "infrastructure_support": {
+    "transport": {
+      "aeroport": {
+        "nom": "Aéroport International Blaise Diagne (AIBD)",
+        "distance": "Environ 50km de Dakar centre",
+        "description": "Aéroport moderne inauguré en 2017, capable d'accueillir des millions de passagers",
+        "connexions": "Vols directs vers l'Europe, l'Afrique, le Moyen-Orient et les Amériques"
+      },
+      "train_ter": {
+        "nom": "Train Express Régional (TER)",
+        "description": "Ligne ferroviaire moderne reliant l'aéroport AIBD à Dakar",
+        "avantage": "Transport rapide et efficace pour les visiteurs des JOJ"
+      },
+      "routes": {
+        "description": "Autoroutes modernes reliant les principaux sites",
+        "projets": "Amélioration continue du réseau routier"
+      },
+      "navettes_joj": {
+        "description": "Navettes dédiées entre sites de compétition, village olympique et zones d'hébergement"
+      }
+    },
+    "hebergement": {
+      "hotels": "Nombreux hôtels de toutes catégories à Dakar",
+      "capacite": "Infrastructure hôtelière en développement pour accueillir visiteurs et délégations",
+      "zones": [
+        "Centre-ville de Dakar",
+        "Almadies (zone touristique)",
+        "Diamniadio (nouvelle ville)",
+        "Saly (station balnéaire à 80km)"
+      ]
+    },
+    "telecommunications": {
+      "description": "Réseau de télécommunications moderne",
+      "internet": "Connexion internet fiable pour la diffusion mondiale",
+      "couverture_mobile": "Excellente couverture 4G/5G"
+    }
+  },
+  "durabilite": {
+    "vision": "JOJ 2026 s'engage pour des jeux durables et respectueux de l'environnement",
+    "initiatives": [
+      "Utilisation maximale d'infrastructures existantes",
+      "Constructions écologiques et durables",
+      "Gestion responsable des déchets",
+      "Énergie renouvelable (solaire particulièrement adapté au climat sénégalais)",
+      "Transport en commun et mobilité douce",
+      "Héritage d'infrastructures utilisables après les jeux",
+      "Sensibilisation environnementale",
+      "Réduction de l'empreinte carbone"
+    ]
+  },
+  "accessibilite": {
+    "description": "Les sites seront accessibles aux personnes à mobilité réduite",
+    "engagements": [
+      "Infrastructures conformes aux normes d'accessibilité",
+      "Transports adaptés",
+      "Services d'assistance",
+      "Signalétique appropriée"
+    ]
+  },
+  "securite": {
+    "description": "Dispositif de sécurité complet pour garantir la sûreté de tous",
+    "mesures": [
+      "Sécurité périmétrique des sites",
+      "Contrôles d'accès",
+      "Équipes de sécurité formées",
+      "Collaboration avec autorités sénégalaises",
+      "Services médicaux d'urgence",
+      "Plans d'évacuation"
+    ]
+  }
+}

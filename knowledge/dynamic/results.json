@@ -1,0 +1,142 @@
+{
+  "_description": "Ce fichier contient les résultats des compétitions - MIS À JOUR EN TEMPS RÉEL PAR LES ORGANISATEURS",
+  "_last_updated": "2025-11-16",
+  "_format": "Résultats par sport et par épreuve",
+
+  "medailles_par_pays": {
+    "_explication": "Tableau des médailles mis à jour en temps réel",
+    "classement": []
+  },
+
+  "resultats_par_sport": {
+    "athletisme": {
+      "100m_masculin": {
+        "date": null,
+        "statut": "À venir",
+        "or": null,
+        "argent": null,
+        "bronze": null,
+        "record": null,
+        "remarques": ""
+      },
+      "100m_feminin": {
+        "date": null,
+        "statut": "À venir",
+        "or": null,
+        "argent": null,
+        "bronze": null,
+        "record": null,
+        "remarques": ""
+      }
+    },
+    "natation": {
+      "100m_nage_libre_masculin": {
+        "date": null,
+        "statut": "À venir",
+        "or": null,
+        "argent": null,
+        "bronze": null,
+        "record": null,
+        "remarques": ""
+      }
+    },
+    "football": {
+      "tournoi_masculin": {
+        "statut": "En cours",
+        "phase": "Phase de groupes",
+        "resultats_groupes": {},
+        "quarts_finale": [],
+        "demi_finales": [],
+        "finale": null,
+        "petite_finale": null,
+        "champion": null,
+        "vice_champion": null,
+        "troisieme_place": null
+      },
+      "tournoi_feminin": {
+        "statut": "En cours",
+        "phase": "Phase de groupes",
+        "resultats_groupes": {},
+        "quarts_finale": [],
+        "demi_finales": [],
+        "finale": null,
+        "petite_finale": null,
+        "champion": null,
+        "vice_champion": null,
+        "troisieme_place": null
+      }
+    },
+    "basketball": {
+      "3x3_masculin": {
+        "statut": "À venir",
+        "champion": null,
+        "vice_champion": null,
+        "troisieme_place": null
+      },
+      "3x3_feminin": {
+        "statut": "À venir",
+        "champion": null,
+        "vice_champion": null,
+        "troisieme_place": null
+      }
+    }
+  },
+
+  "records_battus": {
+    "_explication": "Liste des records olympiques ou du monde battus durant les JOJ",
+    "records": []
+  },
+
+  "moments_forts": {
+    "_explication": "Moments marquants et performances exceptionnelles",
+    "highlights": []
+  },
+
+  "_instructions_mise_a_jour": {
+    "description": "Guide pour mettre à jour les résultats",
+    "etapes": [
+      "1. Mettre à jour immédiatement après chaque finale",
+      "2. Inclure le nom complet de l'athlète, son pays et son temps/score",
+      "3. Indiquer si un record a été battu",
+      "4. Mettre à jour le tableau des médailles",
+      "5. Actualiser le champ _last_updated"
+    ],
+    "exemple_resultat": {
+      "epreuve": "100m_masculin",
+      "date": "2026-11-05",
+      "statut": "Terminé",
+      "or": {
+        "nom": "John DOE",
+        "pays": "USA",
+        "code_pays": "USA",
+        "temps": "10.23",
+        "record": false
+      },
+      "argent": {
+        "nom": "Pierre MARTIN",
+        "pays": "France",
+        "code_pays": "FRA",
+        "temps": "10.28",
+        "record": false
+      },
+      "bronze": {
+        "nom": "Ahmed DIALLO",
+        "pays": "Sénégal",
+        "code_pays": "SEN",
+        "temps": "10.31",
+        "record": false
+      },
+      "record": null,
+      "remarques": "Course très serrée, public en délire"
+    },
+    "exemple_tableau_medailles": {
+      "rang": 1,
+      "pays": "Sénégal",
+      "code_pays": "SEN",
+      "or": 5,
+      "argent": 3,
+      "bronze": 7,
+      "total": 15
+    }
+  }
+}

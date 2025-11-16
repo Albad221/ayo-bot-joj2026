@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayo - JOJ Dakar 2026 | Chat Bot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating orbs background */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(50px);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb1 {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .orb2 {
+            width: 300px;
+            height: 300px;
+            bottom: -50px;
+            right: -50px;
+            animation-delay: 7s;
+        }
+
+        .orb3 {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(50px, -50px) scale(1.1); }
+            66% { transform: translate(-30px, 30px) scale(0.9); }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            height: 90vh;
+            max-height: 900px;
+            display: flex;
+            gap: 30px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Liquid Glass Effect */
+        .glass-card {
+            background: rgba(100, 100, 255, 0.08);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-radius: 30px;
+            border: 1px solid rgba(100, 100, 255, 0.15);
+            box-shadow:
+                0 8px 32px 0 rgba(31, 38, 135, 0.1),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.3),
+                0 0 80px rgba(100, 100, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 8s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            50%, 100% { left: 100%; }
+        }
+
+        /* Mascot Panel */
+        .mascot-panel {
+            flex: 0 0 450px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mascot-card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            position: relative;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            backdrop-filter: none !important;
+        }
+
+        .mascot-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+            animation: float-mascot 6s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes float-mascot {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Ayo Mascot Illustration */
+        .mascot-illustration {
+            width: 280px;
+            height: 320px;
+            margin: 0 auto 20px;
+            animation: float-mascot 6s ease-in-out infinite;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+        }
+
+        .lion-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Hat */
+        .hat {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 70px;
+            z-index: 10;
+        }
+
+        .hat::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+            border-radius: 50% 50% 0 0;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hat-pattern {
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            height: 40px;
+            background:
+                repeating-linear-gradient(
+                    45deg,
+                    #c0392b,
+                    #c0392b 10px,
+                    #e74c3c 10px,
+                    #e74c3c 20px
+                );
+            border-radius: 40% 40% 0 0;
+            z-index: 2;
+        }
+
+        .hat-top {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, #f39c12, #e67e22);
+            border-radius: 50%;
+            box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Lion Head */
+        .lion-head {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 160px;
+            height: 160px;
+        }
+
+        .face {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #d4863e 0%, #b86f30 100%);
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 5;
+        }
+
+        .mane {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, #8B4513 30%, #A0522D 70%);
+            border-radius: 50%;
+            z-index: -1;
+            box-shadow:
+                0 0 0 8px rgba(139, 69, 19, 0.5),
+                0 0 0 16px rgba(160, 82, 45, 0.3),
+                0 0 0 24px rgba(139, 69, 19, 0.2);
+        }
+
+        .ear {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #d4863e, #b86f30);
+            border-radius: 50% 50% 0 50%;
+            top: 10px;
+        }
+
+        .ear::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #f5d6a8;
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
+        }
+
+        .ear-left {
+            left: 5px;
+            transform: rotate(-30deg);
+        }
+
+        .ear-right {
+            right: 5px;
+            transform: rotate(30deg) scaleX(-1);
+        }
+
+        .eyes {
+            position: absolute;
+            top: 40px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .eye {
+            width: 28px;
+            height: 32px;
+            background: white;
+            border-radius: 50% 50% 50% 50%;
+            position: relative;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .pupil {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: #2c3e50;
+            border-radius: 50%;
+            top: 12px;
+            left: 7px;
+            animation: blink 4s infinite;
+        }
+
+        .pupil::after {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+
+        @keyframes blink {
+            0%, 96%, 100% { transform: scaleY(1); }
+            98% { transform: scaleY(0.1); }
+        }
+
+        .nose {
+            position: absolute;
+            width: 20px;
+            height: 16px;
+            background: #e74c3c;
+            border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+            top: 75px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .mouth {
+            position: absolute;
+            width: 50px;
+            height: 25px;
+            border: 3px solid #8B4513;
+            border-top: none;
+            border-radius: 0 0 50% 50%;
+            top: 85px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .mouth::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 10px;
+            background: #8B4513;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .whiskers {
+            position: absolute;
+            top: 60px;
+            width: 40px;
+            height: 2px;
+        }
+
+        .whiskers::before,
+        .whiskers::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #8B4513;
+            border-radius: 2px;
+        }
+
+        .whiskers::before {
+            top: -8px;
+            transform: rotate(-5deg);
+        }
+
+        .whiskers::after {
+            top: 8px;
+            transform: rotate(5deg);
+        }
+
+        .whiskers-left {
+            left: -35px;
+        }
+
+        .whiskers-right {
+            right: -35px;
+            transform: scaleX(-1);
+        }
+
+        /* Body */
+        .lion-body {
+            position: absolute;
+            top: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 140px;
+        }
+
+        .shirt {
+            position: relative;
+            width: 100px;
+            height: 70px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            margin: 0 auto;
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .shirt-text {
+            font-size: 14px;
+            font-weight: 900;
+            color: #2c3e50;
+            text-align: center;
+            line-height: 1.2;
+            letter-spacing: 1px;
+        }
+
+        .shorts {
+            position: relative;
+            width: 100px;
+            height: 40px;
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            margin: 0 auto;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .shorts::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 15px;
+            background: repeating-linear-gradient(
+                45deg,
+                #e67e22,
+                #e67e22 5px,
+                #d35400 5px,
+                #d35400 10px
+            );
+            top: 0;
+        }
+
+        .arm {
+            position: absolute;
+            width: 35px;
+            height: 80px;
+            background: linear-gradient(135deg, #d4863e, #b86f30);
+            border-radius: 20px;
+            top: 5px;
+        }
+
+        .arm-left {
+            left: 0;
+            transform: rotate(-45deg);
+            transform-origin: top;
+        }
+
+        .arm-right {
+            right: 0;
+            transform: rotate(45deg);
+            transform-origin: top;
+        }
+
+        .leg {
+            position: absolute;
+            width: 35px;
+            height: 45px;
+            background: linear-gradient(135deg, #d4863e, #b86f30);
+            border-radius: 10px;
+            top: 105px;
+        }
+
+        .leg-left {
+            left: 25px;
+        }
+
+        .leg-right {
+            right: 25px;
+        }
+
+        .shoe {
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 18px;
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            border-radius: 10px 10px 5px 5px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .shoe::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background: #f39c12;
+            top: 5px;
+            border-radius: 3px;
+        }
+
+        .tail {
+            position: absolute;
+            width: 60px;
+            height: 8px;
+            background: linear-gradient(90deg, #d4863e, #b86f30);
+            border-radius: 10px;
+            right: -10px;
+            top: 80px;
+            transform: rotate(-30deg);
+            transform-origin: left;
+        }
+
+        .tail::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #8B4513;
+            border-radius: 50% 0 50% 50%;
+            right: -15px;
+            top: -6px;
+        }
+
+        .mascot-info {
+            text-align: center;
+            color: white;
+            display: none;
+        }
+
+        .mascot-name {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .mascot-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+        }
+
+        .mascot-slogan {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .stats-card {
+            padding: 25px;
+            display: none;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Chat Panel */
+        .chat-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            padding: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .chat-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            background: #00ff88;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 20px #00ff88;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .chat-subtitle {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        .message {
+            display: flex;
+            gap: 15px;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.user {
+            flex-direction: row-reverse;
+        }
+
+        .message-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 18px 22px;
+            border-radius: 20px;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .message.bot .message-content {
+            background: rgba(100, 100, 255, 0.1);
+            color: #2c3e50;
+            border-bottom-left-radius: 5px;
+        }
+
+        .message.user .message-content {
+            background: linear-gradient(135deg, rgba(100, 100, 255, 0.2), rgba(100, 100, 255, 0.15));
+            color: #2c3e50;
+            border-bottom-right-radius: 5px;
+            text-align: right;
+        }
+
+        .message-content h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .message-content h4 {
+            font-size: 16px;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            color: #34495e;
+        }
+
+        .message-content strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .message-content ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .message-content li {
+            margin-bottom: 5px;
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 5px;
+            padding: 15px;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
+        }
+
+        .chat-input-area {
+            padding: 25px 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .input-wrapper {
+            display: flex;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .input-wrapper:focus-within {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+        }
+
+        #userInput {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #2c3e50;
+            font-size: 15px;
+            padding: 10px 15px;
+        }
+
+        #userInput::placeholder {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        .send-button {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .send-button:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3));
+            transform: scale(1.1);
+        }
+
+        .send-button:active {
+            transform: scale(0.95);
+        }
+
+        .quick-questions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .quick-btn {
+            padding: 8px 16px;
+            background: rgba(100, 100, 255, 0.1);
+            border: 1px solid rgba(100, 100, 255, 0.2);
+            border-radius: 20px;
+            color: #2c3e50;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quick-btn:hover {
+            background: rgba(100, 100, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .mascot-panel {
+                flex: none;
+            }
+
+            .mascot-card {
+                padding: 20px;
+            }
+
+            .mascot-image {
+                max-width: 200px;
+            }
+
+            .stats-card {
+                display: none;
+            }
+        }
+
+        .welcome-message {
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+        }
+
+        .welcome-message h2 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .welcome-message p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating orbs -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+
+    <div class="container">
+        <!-- Mascot Panel -->
+        <div class="mascot-panel">
+            <div class="glass-card mascot-card">
+                <img src="assets/images/ayo.png"
+                     alt="Ayo - Mascotte JOJ 2026"
+                     class="mascot-image"
+                     onerror="this.src='assets/images/ayo.jpg'">
+                <div class="mascot-info">
+                    <div class="mascot-name">🦁 AYO</div>
+                    <div class="mascot-title">Mascotte Officielle JOJ 2026</div>
+                    <div class="mascot-slogan">"L'Afrique accueille,<br>Dakar célèbre"</div>
+                </div>
+            </div>
+
+            <div class="glass-card stats-card">
+                <div class="stat-item">
+                    <div class="stat-value">35+</div>
+                    <div class="stat-label">Sports</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">14+</div>
+                    <div class="stat-label">Partenaires</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Ambassadeurs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">6000</div>
+                    <div class="stat-label">Volontaires</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Panel -->
+        <div class="glass-card chat-panel">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <span class="status-dot"></span>
+                    Chat avec Ayo
+                </div>
+                <div class="chat-subtitle">Posez-moi toutes vos questions sur les JOJ Dakar 2026!</div>
+            </div>
+
+            <div class="chat-messages" id="messages">
+                <div class="welcome-message">
+                    <h2>🦁 Yow! Bienvenue!</h2>
+                    <p>Je suis Ayo, votre guide des Jeux Olympiques de la Jeunesse Dakar 2026! Posez-moi vos questions sur les sports, les ambassadeurs, les partenaires, les programmes ou tout ce que vous voulez savoir!</p>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <div class="quick-questions">
+                    <button class="quick-btn" onclick="askQuestion('Quels sont les sponsors?')">💼 Sponsors</button>
+                    <button class="quick-btn" onclick="askQuestion('Qui sont les ambassadeurs?')">⭐ Ambassadeurs</button>
+                    <button class="quick-btn" onclick="askQuestion('Quels sports aux JOJ?')">🏅 Sports</button>
+                    <button class="quick-btn" onclick="askQuestion('Programme Dakar en Jeux')">🎉 Programmes</button>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text"
+                           id="userInput"
+                           placeholder="Tapez votre question ici..."
+                           onkeypress="handleKeyPress(event)">
+                    <button class="send-button" onclick="sendMessage()">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://127.0.0.1:3002';
+        let sessionId = 'glass-' + Date.now();
+
+        function formatMarkdown(text) {
+            return text
+                .replace(/### (.*?)$/gm, '<h4>$1</h4>')
+                .replace(/## (.*?)$/gm, '<h3>$1</h3>')
+                .replace(/# (.*?)$/gm, '<h2>$1</h2>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/^- (.*?)$/gm, '• $1')
+                .replace(/\n/g, '<br>');
+        }
+
+        function addMessage(content, isUser = false) {
+            const messagesDiv = document.getElementById('messages');
+
+            // Remove welcome message if exists
+            const welcomeMsg = messagesDiv.querySelector('.welcome-message');
+            if (welcomeMsg) {
+                welcomeMsg.remove();
+            }
+
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.textContent = isUser ? '👤' : '🦁';
+
+            const messageContent = document.createElement('div');
+            messageContent.className = 'message-content';
+            messageContent.innerHTML = formatMarkdown(content);
+
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(messageContent);
+            messagesDiv.appendChild(messageDiv);
+
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function showTyping() {
+            const messagesDiv = document.getElementById('messages');
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message bot';
+            typingDiv.id = 'typing';
+
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.textContent = '🦁';
+
+            const typingIndicator = document.createElement('div');
+            typingIndicator.className = 'message-content';
+            typingIndicator.innerHTML = `
+                <div class="typing-indicator">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            `;
+
+            typingDiv.appendChild(avatar);
+            typingDiv.appendChild(typingIndicator);
+            messagesDiv.appendChild(typingDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function hideTyping() {
+            const typing = document.getElementById('typing');
+            if (typing) typing.remove();
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            addMessage(message, true);
+            input.value = '';
+
+            showTyping();
+
+            try {
+                const response = await fetch(`${API_URL}/api/chat`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        sessionId: sessionId
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Erreur serveur');
+                }
+
+                const data = await response.json();
+                hideTyping();
+                addMessage(data.response);
+
+            } catch (error) {
+                hideTyping();
+                addMessage('Désolé, je rencontre un problème de connexion. Vérifiez que le serveur est bien démarré sur le port 3002.');
+                console.error('Erreur:', error);
+            }
+        }
+
+        function askQuestion(question) {
+            document.getElementById('userInput').value = question;
+            sendMessage();
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // Test server connection on load
+        window.addEventListener('load', async () => {
+            try {
+                const response = await fetch(`${API_URL}/health`);
+                if (response.ok) {
+                    console.log('✅ Serveur connecté');
+                }
+            } catch (error) {
+                console.error('❌ Serveur non accessible:', error);
+            }
+        });
+    </script>
+</body>
+</html>

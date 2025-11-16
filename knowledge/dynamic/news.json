@@ -1,0 +1,112 @@
+{
+  "_description": "Actualités et annonces des JOJ Dakar 2026 - ÉDITABLE PAR LES ORGANISATEURS",
+  "_last_updated": "2025-11-16",
+  "_format": "Dernières actualités en premier (ordre chronologique inversé)",
+
+  "actualites": [
+    {
+      "id": "news_001",
+      "date": "2025-11-16",
+      "categorie": "Annonce",
+      "titre": "Bienvenue sur le bot Ayo!",
+      "resume": "Le bot Ayo est maintenant en ligne pour répondre à toutes vos questions sur les JOJ Dakar 2026",
+      "contenu": "Bonjour! Je suis Ayo, votre guide virtuel pour les Jeux Olympiques de la Jeunesse Dakar 2026. Je suis là pour répondre à toutes vos questions sur les JOJ!",
+      "importance": "normale",
+      "visible": true
+    }
+  ],
+
+  "annonces_importantes": {
+    "billetterie": {
+      "statut": "Prochainement",
+      "date_ouverture": "À annoncer",
+      "message": "Les informations sur la billetterie seront communiquées prochainement. Restez connectés!"
+    },
+    "benevolat": {
+      "statut": "Inscriptions ouvertes",
+      "lien_inscription": "À définir",
+      "message": "Le programme de bénévolat sera lancé prochainement. Vous pouvez déjà manifester votre intérêt!"
+    },
+    "transport": {
+      "statut": "En planification",
+      "message": "Un plan de transport complet sera communiqué avant les jeux, incluant navettes dédiées et transports en commun"
+    },
+    "hebergement": {
+      "statut": "Réservations conseillées",
+      "message": "Nous recommandons de réserver votre hébergement dès que possible en raison de la forte affluence attendue"
+    }
+  },
+
+  "alertes_meteo": {
+    "_explication": "Alertes météo importantes pour les visiteurs et athlètes",
+    "alertes_actives": []
+  },
+
+  "modifications_planning": {
+    "_explication": "Changements de dernière minute dans le planning",
+    "modifications": []
+  },
+
+  "informations_covid": {
+    "_explication": "Protocoles sanitaires si nécessaire",
+    "statut": "Aucune restriction actuellement",
+    "mesures": [],
+    "remarques": "Les mesures sanitaires seront adaptées selon l'évolution de la situation sanitaire mondiale"
+  },
+
+  "_categories_actualites": [
+    "Annonce officielle",
+    "Résultat sportif",
+    "Événement culturel",
+    "Transport",
+    "Billetterie",
+    "Bénévolat",
+    "Partenariat",
+    "Infrastructure",
+    "Athlète vedette",
+    "Record",
+    "Météo",
+    "Sécurité",
+    "Autre"
+  ],
+
+  "_niveaux_importance": [
+    "critique",
+    "haute",
+    "normale",
+    "basse"
+  ],
+
+  "_instructions_mise_a_jour": {
+    "description": "Guide pour ajouter des actualités",
+    "etapes": [
+      "1. Ajouter la nouvelle actualité EN PREMIER dans le tableau 'actualites'",
+      "2. Incrémenter l'ID (news_XXX)",
+      "3. Utiliser la date du jour au format YYYY-MM-DD",
+      "4. Choisir une catégorie appropriée",
+      "5. Mettre visible: true pour publier, false pour masquer",
+      "6. Actualiser _last_updated"
+    ],
+    "exemple_actualite": {
+      "id": "news_XXX",
+      "date": "2026-11-01",
+      "categorie": "Résultat sportif",
+      "titre": "Record du monde battu en natation!",
+      "resume": "La jeune nageuse française bat le record du monde junior du 100m nage libre",
+      "contenu": "Dans une course exceptionnelle, Marie DUPONT (France) a pulvérisé le record du monde junior du 100m nage libre en 52.34 secondes, sous les acclamations du public dakarois. Une performance historique pour ces JOJ 2026!",
+      "importance": "haute",
+      "visible": true,
+      "image_url": "optionnel",
+      "video_url": "optionnel",
+      "lien_externe": "optionnel"
+    },
+    "exemple_modification_planning": {
+      "date_modification": "2026-11-03",
+      "epreuve": "Finale 200m masculin",
+      "ancien_horaire": "15:00",
+      "nouvel_horaire": "16:30",
+      "raison": "Conditions météorologiques",
+      "importance": "haute"
+    }
+  }
+}

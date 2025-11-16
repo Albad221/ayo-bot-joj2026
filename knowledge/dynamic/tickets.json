@@ -1,0 +1,206 @@
+{
+  "_description": "Informations sur la billetterie - ÉDITABLE PAR LES ORGANISATEURS",
+  "_last_updated": "2025-11-16",
+
+  "statut_general": {
+    "billetterie_ouverte": false,
+    "date_ouverture": "À annoncer",
+    "site_billetterie": "À annoncer",
+    "message": "Les informations détaillées sur la billetterie seront communiquées prochainement. Inscrivez-vous à notre newsletter pour être informé en priorité!"
+  },
+
+  "types_billets": {
+    "ceremonie_ouverture": {
+      "disponible": false,
+      "categories": [
+        {
+          "categorie": "Premium",
+          "prix_fcfa": null,
+          "prix_eur": null,
+          "description": "Places VIP avec meilleure vue",
+          "avantages": ["Siège premium", "Programme officiel", "Accès lounge"]
+        },
+        {
+          "categorie": "Standard",
+          "prix_fcfa": null,
+          "prix_eur": null,
+          "description": "Places assises standard",
+          "avantages": []
+        },
+        {
+          "categorie": "Populaire",
+          "prix_fcfa": null,
+          "prix_eur": null,
+          "description": "Places debout ou gradins",
+          "avantages": []
+        }
+      ]
+    },
+    "ceremonie_cloture": {
+      "disponible": false,
+      "categories": []
+    },
+    "competitions_journalieres": {
+      "disponible": false,
+      "description": "Billets pour assister aux compétitions d'une journée dans un site spécifique",
+      "prix_indicatif_fcfa": "5000 - 20000 FCFA selon le sport et la catégorie"
+    },
+    "pass_multi_jours": {
+      "disponible": false,
+      "description": "Pass donnant accès à plusieurs jours de compétition",
+      "types": [
+        {
+          "nom": "Pass Week 1",
+          "duree": "7 jours",
+          "prix_fcfa": null
+        },
+        {
+          "nom": "Pass Week 2",
+          "duree": "7 jours",
+          "prix_fcfa": null
+        },
+        {
+          "nom": "Pass Intégral",
+          "duree": "14 jours",
+          "prix_fcfa": null,
+          "avantages": ["Accès à toutes les compétitions", "Réductions sur merchandising"]
+        }
+      ]
+    },
+    "billets_famille": {
+      "disponible": false,
+      "description": "Packs famille avec tarifs réduits",
+      "composition": "2 adultes + 2 enfants (-18 ans)"
+    },
+    "billets_groupes": {
+      "disponible": false,
+      "description": "Tarifs de groupe pour écoles et associations",
+      "minimum": "20 personnes",
+      "reduction": "À définir"
+    }
+  },
+
+  "tarifs_reduits": {
+    "etudiants": {
+      "reduction": "À définir",
+      "justificatif": "Carte d'étudiant valide"
+    },
+    "seniors": {
+      "reduction": "À définir",
+      "age_minimum": "65 ans"
+    },
+    "enfants": {
+      "reduction": "À définir",
+      "age_maximum": "12 ans",
+      "gratuite_age": "Enfants de moins de 5 ans (sans siège)"
+    },
+    "personnes_handicapees": {
+      "reduction": "À définir",
+      "accompagnateur_gratuit": true,
+      "acces_facilite": true
+    },
+    "residents_senegalais": {
+      "reduction": "Tarifs préférentiels pour les résidents",
+      "justificatif": "Pièce d'identité sénégalaise"
+    }
+  },
+
+  "points_vente": {
+    "en_ligne": {
+      "site_officiel": "À annoncer",
+      "paiement_accepte": ["Carte bancaire", "Mobile money", "Wave", "Orange Money"],
+      "e_ticket": true
+    },
+    "points_vente_physiques": {
+      "dakar": [
+        {
+          "nom": "Billetterie Stade Abdoulaye Wade",
+          "adresse": "À préciser",
+          "horaires": "À préciser"
+        },
+        {
+          "nom": "Office de Tourisme de Dakar",
+          "adresse": "À préciser",
+          "horaires": "À préciser"
+        }
+      ],
+      "autres_villes": []
+    },
+    "revendeurs_autorises": {
+      "description": "Liste des revendeurs officiels",
+      "liste": [],
+      "avertissement": "Attention aux contrefaçons! N'achetez que via les canaux officiels"
+    }
+  },
+
+  "conditions_achat": {
+    "limite_par_personne": "À définir",
+    "validite": "Les billets sont valables uniquement pour la date et le lieu indiqués",
+    "nominatif": false,
+    "remboursement": {
+      "annulation_competition": "Remboursement intégral en cas d'annulation officielle",
+      "revente": "Possible via la plateforme officielle uniquement",
+      "conditions": "Consultez les CGV sur le site de billetterie"
+    }
+  },
+
+  "acces_gratuits": {
+    "enfants_moins_5ans": "Gratuit sans siège",
+    "benevoles_joj": "Accès privilégié selon le rôle",
+    "presse_accreditee": "Accréditation presse",
+    "officiels": "Badges officiels"
+  },
+
+  "packages_hospitalite": {
+    "description": "Packages VIP incluant billets premium, restauration, accès lounge",
+    "disponible": false,
+    "contact": "hospitalite@dakar2026.sn (exemple)"
+  },
+
+  "accessibilite": {
+    "pmr": {
+      "description": "Places réservées pour personnes à mobilité réduite",
+      "accompagnateur": "Gratuit pour l'accompagnateur",
+      "acces_facilite": "Entrées dédiées, ascenseurs, toilettes adaptées"
+    }
+  },
+
+  "faq_billetterie": [
+    {
+      "question": "Quand la billetterie ouvre-t-elle?",
+      "reponse": "La date d'ouverture de la billetterie sera annoncée prochainement. Suivez nos canaux officiels pour être informé en priorité."
+    },
+    {
+      "question": "Où acheter des billets?",
+      "reponse": "Les billets seront disponibles sur le site officiel et dans les points de vente autorisés. N'achetez jamais de billets auprès de sources non officielles pour éviter les contrefaçons."
+    },
+    {
+      "question": "Puis-je obtenir un remboursement?",
+      "reponse": "Les conditions de remboursement seront précisées lors de l'ouverture de la billetterie. Un remboursement intégral est garanti en cas d'annulation officielle d'une épreuve."
+    },
+    {
+      "question": "Y a-t-il des tarifs réduits?",
+      "reponse": "Oui, des tarifs réduits seront proposés pour les enfants, étudiants, seniors, personnes handicapées et résidents sénégalais. Les détails seront communiqués à l'ouverture de la billetterie."
+    },
+    {
+      "question": "Peut-on acheter des billets pour plusieurs jours?",
+      "reponse": "Oui, des pass multi-jours seront disponibles, offrant un accès à plusieurs jours de compétition avec des tarifs avantageux."
+    }
+  ],
+
+  "_instructions_mise_a_jour": {
+    "description": "Guide pour mettre à jour les informations billetterie",
+    "etapes": [
+      "1. Mettre à jour le statut_general quand la billetterie ouvre",
+      "2. Remplir les prix dans chaque catégorie",
+      "3. Ajouter les points de vente physiques",
+      "4. Mettre à jour la disponibilité de chaque type de billet",
+      "5. Actualiser _last_updated"
+    ],
+    "notes": [
+      "Toujours afficher les prix en FCFA (devise locale) ET en EUR pour les visiteurs internationaux",
+      "Mettre disponible: true quand les billets sont en vente",
+      "Indiquer 'ÉPUISÉ' quand il n'y a plus de places"
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "_description": "Ce fichier contient le planning des compétitions - ÉDITABLE PAR LES ORGANISATEURS JOJ",
+  "_last_updated": "2025-11-16",
+  "_format": "Les dates sont au format ISO 8601 (YYYY-MM-DD), les heures au format 24h (HH:MM)",
+
+  "ceremonie_ouverture": {
+    "date": "2026-10-31",
+    "heure": "20:00",
+    "lieu": "Stade Abdoulaye Wade (Diamniadio)",
+    "description": "Cérémonie d'ouverture officielle des JOJ Dakar 2026",
+    "diffusion_tv": true,
+    "billetterie_disponible": true
+  },
+
+  "ceremonie_cloture": {
+    "date": "2026-11-13",
+    "heure": "20:00",
+    "lieu": "Stade Abdoulaye Wade (Diamniadio)",
+    "description": "Cérémonie de clôture des JOJ Dakar 2026",
+    "diffusion_tv": true,
+    "billetterie_disponible": true
+  },
+
+  "competitions_par_jour": {
+    "2026-10-31": {
+      "jour": "Jour 1",
+      "competitions": [
+        {
+          "sport": "Cérémonie d'ouverture",
+          "heure": "20:00",
+          "lieu": "Stade Abdoulaye Wade",
+          "type": "Cérémonie"
+        }
+      ]
+    },
+    "2026-11-01": {
+      "jour": "Jour 2",
+      "competitions": []
+    },
+    "2026-11-13": {
+      "jour": "Jour 14",
+      "competitions": [
+        {
+          "sport": "Cérémonie de clôture",
+          "heure": "20:00",
+          "lieu": "Stade Abdoulaye Wade",
+          "type": "Cérémonie"
+        }
+      ]
+    }
+  },
+
+  "competitions_par_sport": {
+    "athletisme": {
+      "debut": "2026-11-02",
+      "fin": "2026-11-12",
+      "lieu_principal": "Stade Abdoulaye Wade",
+      "finales": [],
+      "remarques": "À compléter avec le planning détaillé des épreuves"
+    },
+    "natation": {
+      "debut": "2026-11-01",
+      "fin": "2026-11-10",
+      "lieu_principal": "Centre Aquatique",
+      "finales": [],
+      "remarques": "À compléter avec le planning détaillé des épreuves"
+    },
+    "basketball": {
+      "debut": "2026-11-02",
+      "fin": "2026-11-12",
+      "lieu_principal": "Dakar Arena",
+      "finales": [],
+      "remarques": "Tournoi masculin et féminin, 3x3 et 5x5"
+    },
+    "football": {
+      "debut": "2026-11-01",
+      "fin": "2026-11-12",
+      "lieux": ["Stade Abdoulaye Wade", "Stade Léopold Sédar Senghor"],
+      "finales": [],
+      "remarques": "Tournoi masculin et féminin"
+    },
+    "judo": {
+      "debut": "2026-11-03",
+      "fin": "2026-11-08",
+      "lieu_principal": "Arène Nationale",
+      "finales": [],
+      "remarques": "Différentes catégories de poids"
+    }
+  },
+
+  "evenements_speciaux": {
+    "journee_culture": {
+      "date": "À déterminer",
+      "description": "Journée dédiée à la célébration de la culture sénégalaise et africaine",
+      "activites": [
+        "Spectacles de danse traditionnelle",
+        "Concerts",
+        "Expositions d'art",
+        "Démonstrations culinaires"
+      ]
+    },
+    "festival_jeunesse": {
+      "description": "Programme éducatif et culturel parallèle aux compétitions",
+      "activites": [
+        "Ateliers éducatifs",
+        "Rencontres avec des athlètes",
+        "Sessions de motivation",
+        "Activités culturelles"
+      ]
+    }
+  },
+
+  "_instructions_mise_a_jour": {
+    "description": "Guide pour les organisateurs JOJ pour mettre à jour ce fichier",
+    "etapes": [
+      "1. Respecter le format JSON (virgules, guillemets, accolades)",
+      "2. Utiliser le format de date ISO: YYYY-MM-DD",
+      "3. Utiliser le format d'heure 24h: HH:MM",
+      "4. Mettre à jour le champ _last_updated avec la date du jour",
+      "5. Ajouter les compétitions dans competitions_par_jour ET competitions_par_sport",
+      "6. Vérifier la cohérence entre les deux structures"
+    ],
+    "exemple_competition": {
+      "sport": "Athlétisme - 100m masculin",
+      "heure": "15:30",
+      "lieu": "Stade Abdoulaye Wade",
+      "type": "Finale",
+      "diffusion_tv": true,
+      "billetterie_disponible": true,
+      "remarques": "Optionnel"
+    }
+  }
+}

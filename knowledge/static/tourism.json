@@ -1,0 +1,345 @@
+{
+  "decouvrir_dakar": {
+    "presentation": {
+      "description": "Dakar, capitale du Sénégal, est une ville dynamique située sur la presqu'île du Cap-Vert, le point le plus occidental d'Afrique",
+      "population": "Environ 3-4 millions d'habitants (région métropolitaine)",
+      "langue_principale": "Wolof et Français",
+      "climat": {
+        "type": "Tropical sec",
+        "temperature_moyenne": "24-30°C",
+        "periode_joj": "Fin octobre - début novembre: temps agréable, après la saison des pluies",
+        "conseil": "Climat doux et ensoleillé, idéal pour les compétitions"
+      },
+      "monnaie": "Franc CFA (XOF)",
+      "fuseau_horaire": "GMT (UTC+0)"
+    },
+    "attractions_touristiques": [
+      {
+        "nom": "Île de Gorée",
+        "categorie": "Patrimoine UNESCO",
+        "description": "Île historique et lieu de mémoire de la traite négrière, accessible en ferry depuis Dakar",
+        "importance": "Site du patrimoine mondial de l'UNESCO, visite incontournable",
+        "duree_visite": "Demi-journée",
+        "acces": "Ferry depuis le port de Dakar (20 minutes)"
+      },
+      {
+        "nom": "Monument de la Renaissance Africaine",
+        "categorie": "Monument",
+        "description": "Statue monumentale de 49 mètres de haut, symbole de l'Afrique moderne",
+        "importance": "Plus haute statue d'Afrique, vue panoramique sur Dakar",
+        "localisation": "Collines des Mamelles"
+      },
+      {
+        "nom": "Lac Rose (Lac Retba)",
+        "categorie": "Site naturel",
+        "description": "Lac salé célèbre pour sa couleur rose due à une algue, ancien point d'arrivée du rallye Paris-Dakar",
+        "distance": "35 km au nord-est de Dakar",
+        "activites": ["Baignade", "Photos", "Découverte de l'extraction du sel", "Quad"]
+      },
+      {
+        "nom": "Marché Sandaga",
+        "categorie": "Shopping",
+        "description": "Marché traditionnel animé au coeur de Dakar",
+        "produits": ["Tissus africains", "Artisanat", "Bijoux", "Souvenirs"]
+      },
+      {
+        "nom": "Marché des HLM",
+        "categorie": "Shopping",
+        "description": "Marché moderne pour tissus et vêtements traditionnels"
+      },
+      {
+        "nom": "Village des Arts",
+        "categorie": "Culture",
+        "description": "Quartier d'artistes avec ateliers, galeries et expositions",
+        "activites": ["Rencontre avec des artistes", "Achat d'oeuvres d'art", "Découverte de l'art contemporain sénégalais"]
+      },
+      {
+        "nom": "Musée Théodore Monod (IFAN)",
+        "categorie": "Musée",
+        "description": "Musée d'art et traditions africaines",
+        "collections": ["Art africain", "Objets traditionnels", "Archéologie"]
+      },
+      {
+        "nom": "Musée des Civilisations Noires",
+        "categorie": "Musée",
+        "description": "Musée moderne dédié aux civilisations noires et à la diaspora africaine",
+        "importance": "Inauguré en 2018, architecture impressionnante"
+      },
+      {
+        "nom": "Cathédrale du Souvenir Africain",
+        "categorie": "Monument religieux",
+        "description": "Belle cathédrale au coeur de Dakar"
+      },
+      {
+        "nom": "Grande Mosquée de Dakar",
+        "categorie": "Monument religieux",
+        "description": "Impressionnante mosquée avec minaret visible de loin"
+      },
+      {
+        "nom": "Plages de Dakar",
+        "categorie": "Nature",
+        "sites": [
+          "Plage de N'Gor (surf, ambiance décontractée)",
+          "Plage de Yoff (authentique, surfeurs)",
+          "Plage des Almadies (zone touristique)",
+          "Plage de Virage (calme)",
+          "Île de N'Gor (île paisible accessible en pirogue)"
+        ]
+      },
+      {
+        "nom": "Les Almadies",
+        "categorie": "Quartier",
+        "description": "Point le plus occidental d'Afrique, zone résidentielle moderne et touristique",
+        "attractions": ["Phare des Mamelles", "Restaurants", "Vie nocturne", "Plages"]
+      },
+      {
+        "nom": "Réserve de Bandia",
+        "categorie": "Nature",
+        "description": "Réserve animalière avec girafes, rhinocéros, antilopes",
+        "distance": "65 km de Dakar",
+        "duree_visite": "Demi-journée",
+        "activite": "Safari en 4x4"
+      },
+      {
+        "nom": "Parc National des Îles de la Madeleine",
+        "categorie": "Nature",
+        "description": "Îles volcaniques, réserve marine et ornithologique",
+        "acces": "Bateau depuis Dakar"
+      }
+    ],
+    "gastronomie": {
+      "description": "La cuisine sénégalaise est riche, savoureuse et variée",
+      "plats_typiques": [
+        {
+          "nom": "Thieboudienne (Tiep bou dien)",
+          "description": "Plat national: riz au poisson et légumes, savoureux et coloré",
+          "importance": "Patrimoine culturel immatériel de l'UNESCO"
+        },
+        {
+          "nom": "Yassa poulet/poisson",
+          "description": "Poulet ou poisson mariné aux oignons et citron"
+        },
+        {
+          "nom": "Mafé",
+          "description": "Ragoût de viande à la sauce d'arachide"
+        },
+        {
+          "nom": "Thiou",
+          "description": "Ragoût de viande ou poisson avec légumes"
+        },
+        {
+          "nom": "Pastels",
+          "description": "Beignets de poisson frits, snack populaire"
+        },
+        {
+          "nom": "Fataya",
+          "description": "Chaussons fourrés à la viande ou au poisson"
+        },
+        {
+          "nom": "Thiakry",
+          "description": "Dessert à base de couscous, yaourt et crème"
+        }
+      ],
+      "boissons": [
+        {
+          "nom": "Bissap",
+          "description": "Jus d'hibiscus, boisson nationale rouge et rafraîchissante"
+        },
+        {
+          "nom": "Bouye",
+          "description": "Jus de baobab, riche en vitamine C"
+        },
+        {
+          "nom": "Gingembre",
+          "description": "Jus de gingembre épicé et rafraîchissant"
+        },
+        {
+          "nom": "Café Touba",
+          "description": "Café épicé sénégalais avec poivre de Guinée et clous de girofle"
+        },
+        {
+          "nom": "Attaya",
+          "description": "Cérémonie du thé sénégalais (thé vert en trois services)"
+        }
+      ]
+    },
+    "culture_et_traditions": {
+      "musique": {
+        "description": "Le Sénégal a une scène musicale riche et vibrante",
+        "styles": [
+          "Mbalax (musique traditionnelle moderne popularisée par Youssou N'Dour)",
+          "Afrobeat",
+          "Hip-hop sénégalais",
+          "Musique traditionnelle wolof, sérère, diola"
+        ],
+        "artistes_celebres": [
+          "Youssou N'Dour (légende internationale)",
+          "Baaba Maal",
+          "Ismaël Lô",
+          "Orchestra Baobab",
+          "Viviane Ndour"
+        ]
+      },
+      "danse": {
+        "description": "La danse fait partie intégrante de la culture sénégalaise",
+        "types": ["Sabar (danse wolof énergique)", "Danses traditionnelles lors des cérémonies"]
+      },
+      "mode": {
+        "description": "Le Sénégal est réputé pour son élégance et sa mode",
+        "elements": [
+          "Boubous (vêtements traditionnels amples et colorés)",
+          "Tissus bazin et wax",
+          "Dakar Fashion Week",
+          "Créateurs de mode reconnus internationalement"
+        ]
+      },
+      "teranga": {
+        "nom": "La Teranga",
+        "description": "Concept sénégalais d'hospitalité et d'accueil chaleureux",
+        "signification": "Le Sénégal est appelé 'Pays de la Teranga' pour son hospitalité légendaire",
+        "importance": "Valeur fondamentale de la société sénégalaise"
+      },
+      "lutte_senegalaise": {
+        "nom": "Lutte sénégalaise (Laamb)",
+        "description": "Sport national et spectacle culturel combinant lutte et rituels traditionnels",
+        "importance": "Événement social majeur, rassemble des dizaines de milliers de spectateurs",
+        "champions": "Les lutteurs sont de véritables stars nationales"
+      }
+    },
+    "conseils_pratiques": {
+      "langue": [
+        "Français est la langue officielle",
+        "Wolof est parlé par la majorité de la population",
+        "Expressions utiles en wolof: 'Nanga def?' (Comment vas-tu?), 'Jërëjëf' (Merci), 'Mangi fi' (Je vais bien)"
+      ],
+      "argent": [
+        "Distributeurs ATM disponibles à Dakar",
+        "Cartes bancaires acceptées dans les grands établissements",
+        "Prévoir du cash pour les marchés et petits commerces"
+      ],
+      "sante": [
+        "Vaccination contre la fièvre jaune recommandée (parfois obligatoire)",
+        "Protection contre le paludisme recommandée",
+        "Eau en bouteille recommandée",
+        "Assurance voyage conseillée"
+      ],
+      "securite": [
+        "Dakar est généralement sûre pour les touristes",
+        "Vigilance habituelle dans les zones touristiques",
+        "Éviter les démonstrations d'objets de valeur",
+        "Utiliser des taxis officiels ou applications de VTC"
+      ],
+      "transport_local": [
+        "Taxis (jaunes et noirs): négocier le prix avant",
+        "Taxis urbains (DDD, Yango): applications mobiles",
+        "Car rapides et bus: transport local pittoresque mais bondé",
+        "Location de voiture possible"
+      ],
+      "communication": [
+        "Connexion internet largement disponible",
+        "Cartes SIM locales faciles à obtenir (Orange, Expresso, Free)",
+        "WiFi dans hôtels et restaurants"
+      ],
+      "savoir_vivre": [
+        "Saluer les gens qu'on croise",
+        "Demander permission avant de photographier les personnes",
+        "S'habiller modestement en dehors des zones balnéaires",
+        "Enlever ses chaussures avant d'entrer dans une maison",
+        "Utiliser la main droite pour manger ou donner quelque chose"
+      ]
+    },
+    "excursions_region": {
+      "description": "Profitez de votre séjour pour découvrir la région",
+      "destinations": [
+        {
+          "nom": "Saint-Louis",
+          "distance": "270 km au nord",
+          "description": "Ancienne capitale, ville coloniale classée UNESCO, architecture créole",
+          "attractions": ["Centre historique", "Parc National des Oiseaux du Djoudj", "Plage de Langue de Barbarie"]
+        },
+        {
+          "nom": "Saly",
+          "distance": "80 km au sud",
+          "description": "Station balnéaire populaire sur la Petite Côte",
+          "activites": ["Plages", "Sports nautiques", "Détente"]
+        },
+        {
+          "nom": "Joal-Fadiouth",
+          "distance": "115 km au sud",
+          "description": "Village pittoresque avec île aux coquillages",
+          "particularite": "Cohabitation harmonieuse chrétiens-musulmans"
+        },
+        {
+          "nom": "Toubab Dialaw",
+          "distance": "45 km au sud",
+          "description": "Village côtier bohème, destination d'artistes",
+          "activites": ["Surf", "Art", "Plages tranquilles"]
+        },
+        {
+          "nom": "Thiès",
+          "distance": "70 km à l'est",
+          "description": "Deuxième ville du Sénégal, centre culturel et artisanal",
+          "attractions": ["Manufacture des Arts Décoratifs", "Tapisseries"]
+        }
+      ]
+    },
+    "shopping_souvenirs": {
+      "quoi_acheter": [
+        "Tissus africains (wax, bazin, ndoket)",
+        "Vêtements traditionnels (boubous)",
+        "Artisanat local (sculptures en bois, masques, instruments de musique)",
+        "Bijoux en argent et perles",
+        "Objets en cuir",
+        "Peintures et art contemporain (sous-verre)",
+        "Produits cosmétiques naturels (beurre de karité, savon noir)",
+        "Épices et condiments locaux"
+      ],
+      "ou_acheter": [
+        "Marché Sandaga (centre-ville)",
+        "Marché HLM (tissus)",
+        "Soumbédioune (artisanat en bord de mer)",
+        "Village des Arts (art contemporain)",
+        "Boutiques des Almadies"
+      ]
+    },
+    "vie_nocturne": {
+      "description": "Dakar offre une vie nocturne animée",
+      "activites": [
+        "Concerts de musique live (mbalax, jazz, afrobeat)",
+        "Restaurants avec ambiance (bords de mer)",
+        "Bars et lounges (Almadies, Point E)",
+        "Boîtes de nuit",
+        "Spectacles de danse traditionnelle"
+      ]
+    }
+  },
+  "informations_pratiques_joj": {
+    "periode_visite": {
+      "dates_joj": "31 octobre - 13 novembre 2026",
+      "meilleure_periode": "Arriver quelques jours avant pour s'acclimater et découvrir la ville",
+      "climat": "Période agréable après la saison des pluies, températures douces"
+    },
+    "hebergement_visiteurs": {
+      "conseil": "Réserver tôt car forte affluence pendant les JOJ",
+      "options": [
+        "Hôtels internationaux (Radisson, Pullman, King Fahd Palace)",
+        "Hôtels locaux",
+        "Maisons d'hôtes",
+        "Appartements Airbnb",
+        "Auberges de jeunesse"
+      ],
+      "quartiers_recommandes": [
+        "Almadies (touristique, plages)",
+        "Plateau (centre-ville, affaires)",
+        "Mermoz (résidentiel)",
+        "Point E (calme, central)"
+      ]
+    },
+    "se_deplacer_pendant_joj": {
+      "navettes_officielles": "Navettes dédiées entre sites de compétition",
+      "transports_publics": "TER (train), bus, taxis",
+      "applications": "Yango, DDD pour taxis",
+      "conseil": "Planifier ses déplacements à l'avance pendant les JOJ"
+    }
+  }
+}

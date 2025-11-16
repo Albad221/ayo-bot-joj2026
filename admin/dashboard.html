@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayo Bot - Interface de Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .chat-container {
+            height: 500px;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f7f8fc;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 12px 18px;
+            border-radius: 18px;
+            line-height: 1.5;
+        }
+
+        .message.bot .message-content {
+            background: white;
+            color: #333;
+            border: 2px solid #f6d365;
+        }
+
+        .message.user .message-content {
+            background: #667eea;
+            color: white;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .message.bot .avatar {
+            background: #fda085;
+        }
+
+        .message.user .avatar {
+            background: #667eea;
+        }
+
+        .input-container {
+            padding: 20px;
+            background: white;
+            border-top: 2px solid #f0f0f0;
+            display: flex;
+            gap: 10px;
+        }
+
+        #messageInput {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        #messageInput:focus {
+            border-color: #667eea;
+        }
+
+        #sendButton {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        #sendButton:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        #sendButton:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading {
+            display: flex;
+            gap: 5px;
+            padding: 10px;
+        }
+
+        .loading span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #667eea;
+            animation: bounce 1.4s infinite ease-in-out;
+        }
+
+        .loading span:nth-child(1) { animation-delay: -0.32s; }
+        .loading span:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+
+        .info-panel {
+            padding: 20px;
+            background: #f0f4ff;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .info-panel h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .quick-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .quick-action {
+            padding: 8px 16px;
+            background: white;
+            border: 2px solid #667eea;
+            color: #667eea;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .quick-action:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .message-content {
+                max-width: 85%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦁 Bot Ayo</h1>
+            <p>Mascotte officielle des JOJ Dakar 2026</p>
+        </div>
+
+        <div class="chat-container" id="chatContainer">
+            <div class="message bot">
+                <div class="avatar">🦁</div>
+                <div class="message-content">
+                    Bonjour! Je suis Ayo, la mascotte des JOJ Dakar 2026! 🌟<br>
+                    Comment puis-je t'aider aujourd'hui?
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <h3>Questions rapides</h3>
+            <div class="quick-actions">
+                <button class="quick-action" onclick="sendQuickMessage('Quelles sont les dates des JOJ 2026?')">📅 Dates</button>
+                <button class="quick-action" onclick="sendQuickMessage('Quels sports seront au programme?')">⚽ Sports</button>
+                <button class="quick-action" onclick="sendQuickMessage('Comment acheter des billets?')">🎫 Billets</button>
+                <button class="quick-action" onclick="sendQuickMessage('Parle-moi de Dakar')">🌍 Dakar</button>
+                <button class="quick-action" onclick="sendQuickMessage('Qui es-tu Ayo?')">🦁 Ayo</button>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Pose ta question à Ayo..."
+                onkeypress="handleKeyPress(event)"
+            >
+            <button id="sendButton" onclick="sendMessage()">Envoyer</button>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:3002';
+        const sessionId = 'web_' + Date.now();
+        let isLoading = false;
+
+        function formatMarkdown(text) {
+            return text
+                .replace(/### (.*?)$/gm, '<h4 style="color:#667eea;margin:10px 0 5px 0;font-size:1.1em;">$1</h4>')
+                .replace(/## (.*?)$/gm, '<h3 style="color:#667eea;margin:10px 0 5px 0;font-size:1.2em;">$1</h3>')
+                .replace(/# (.*?)$/gm, '<h2 style="color:#667eea;margin:10px 0 5px 0;font-size:1.3em;">$1</h2>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/^- (.*?)$/gm, '• $1')
+                .replace(/\n/g, '<br>');
+        }
+
+        function addMessage(content, isUser = false) {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+
+            const avatar = document.createElement('div');
+            avatar.className = 'avatar';
+            avatar.textContent = isUser ? '👤' : '🦁';
+
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            contentDiv.style.lineHeight = '1.6';
+            const formattedContent = isUser ? content.replace(/\n/g, '<br>') : formatMarkdown(content);
+            contentDiv.innerHTML = formattedContent;
+
+            if (isUser) {
+                messageDiv.appendChild(contentDiv);
+                messageDiv.appendChild(avatar);
+            } else {
+                messageDiv.appendChild(avatar);
+                messageDiv.appendChild(contentDiv);
+            }
+
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function addLoadingIndicator() {
+            const chatContainer = document.getElementById('chatContainer');
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'message bot';
+            loadingDiv.id = 'loadingIndicator';
+
+            loadingDiv.innerHTML = `
+                <div class="avatar">🦁</div>
+                <div class="message-content">
+                    <div class="loading">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            `;
+
+            chatContainer.appendChild(loadingDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function removeLoadingIndicator() {
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            if (loadingIndicator) {
+                loadingIndicator.remove();
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+
+            if (!message || isLoading) return;
+
+            isLoading = true;
+            document.getElementById('sendButton').disabled = true;
+
+            // Afficher le message de l'utilisateur
+            addMessage(message, true);
+            input.value = '';
+
+            // Afficher l'indicateur de chargement
+            addLoadingIndicator();
+
+            try {
+                const response = await fetch(`${API_URL}/api/chat`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        sessionId: sessionId
+                    })
+                });
+
+                const data = await response.json();
+
+                removeLoadingIndicator();
+
+                if (data.success) {
+                    addMessage(data.response);
+                } else {
+                    addMessage("Désolé, j'ai rencontré un problème. Peux-tu réessayer? 😊");
+                }
+
+            } catch (error) {
+                removeLoadingIndicator();
+                addMessage("Je ne peux pas me connecter au serveur. Assure-toi que le bot est démarré sur http://localhost:3002 😊");
+                console.error('Erreur:', error);
+            }
+
+            isLoading = false;
+            document.getElementById('sendButton').disabled = false;
+            input.focus();
+        }
+
+        function sendQuickMessage(message) {
+            document.getElementById('messageInput').value = message;
+            sendMessage();
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // Focus sur l'input au chargement
+        window.onload = () => {
+            document.getElementById('messageInput').focus();
+        };
+    </script>
+</body>
+</html>

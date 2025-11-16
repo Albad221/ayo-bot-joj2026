@@ -1,0 +1,188 @@
+{
+  "programmes_initiatives": {
+    "dakar_en_jeux": {
+      "nom": "Dakar en Jeux",
+      "type": "Festival culturel et sportif annuel",
+      "role": "Élément central de la stratégie de mobilisation",
+      "objectif": "Promotion des valeurs olympiques avant les JOJ",
+      "edition_2025": {
+        "numero": "4ème et dernière édition",
+        "dates": "4-9 novembre 2025",
+        "thematique": "Éducation par le sport",
+        "lieux": ["Dakar", "Saly", "Diamniadio"],
+        "activites": [
+          "Initiations sportives (Basketball, Baseball, Futsal, Judo, Boxe, Escrime, Badminton, Tennis de table, Tir à l'arc, Athlétisme)",
+          "Sensibilisation à la lutte contre le dopage",
+          "Festival culturel en plein air",
+          "Musique et spectacles",
+          "Programmes de santé et bien-être (14-18 ans)",
+          "Concours éducatifs (Jeunes Génies, Spelling Bee)"
+        ]
+      },
+      "impact": "Mobilisation de la jeunesse sénégalaise autour des valeurs olympiques"
+    },
+    "yeesal": {
+      "nom": "Yeesal",
+      "type": "Programme d'implication des jeunes",
+      "objectif": "Engagement actif de la jeunesse sénégalaise dans l'organisation et la participation aux JOJ",
+      "cible": "Jeunes de 12-18 ans",
+      "activites": "Participation, volontariat, ambassadeurs jeunesse"
+    },
+    "brevet_olympique": {
+      "nom": "Brevet Olympique",
+      "type": "Programme éducatif",
+      "objectif": "Sensibilisation aux valeurs olympiques dans les écoles",
+      "cible": "Élèves des collèges et lycées",
+      "contenu": [
+        "Histoire olympique",
+        "Valeurs olympiques (Excellence, Amitié, Respect)",
+        "Fair-play et esprit sportif",
+        "Santé et nutrition",
+        "Lutte contre le dopage"
+      ],
+      "activites": [
+        "Olympiades scolaires de football (10 écoles, 110 élèves)",
+        "Tournois inclusifs (50% femmes, personnes handicapées)",
+        "Projets pédagogiques sur valeurs olympiques",
+        "Éducation environnementale via le sport"
+      ]
+    },
+    "impact_52_fitness": {
+      "nom": "Impact 52 Fitness",
+      "type": "Programme de promotion de l'activité physique",
+      "objectif": "Encourager un mode de vie actif chez les jeunes",
+      "approche": "52 semaines d'activités physiques et sportives",
+      "cible": "Jeunes et grand public"
+    },
+    "24h_sport_feminin": {
+      "nom": "24h du Sport Féminin",
+      "type": "Événement dédié au sport féminin",
+      "objectif": "Promotion et visibilité du sport féminin",
+      "activites": [
+        "Compétitions féminines",
+        "Conférences sur le sport féminin",
+        "Rencontres avec athlètes féminines",
+        "Sensibilisation à l'égalité dans le sport"
+      ],
+      "impact": "Renforcement de la place des femmes dans le sport"
+    },
+    "kids_olympic_skills": {
+      "nom": "Kids Olympic Skills",
+      "type": "Ateliers pour enfants",
+      "objectif": "Initiation des plus jeunes aux valeurs et disciplines olympiques",
+      "cible": "Enfants 6-12 ans",
+      "activites": [
+        "Ateliers sportifs ludiques",
+        "Découverte des sports olympiques",
+        "Jeux éducatifs sur les valeurs olympiques",
+        "Activités créatives"
+      ]
+    },
+    "programme_volontaires": {
+      "nom": "Programme de Volontariat",
+      "objectif": "Recruter et former 6000 volontaires pour les JOJ",
+      "lancement": "Décembre 2025",
+      "nombre_volontaires": 6000,
+      "roles": [
+        "Support opérationnel pendant les Jeux",
+        "Accueil et orientation des visiteurs",
+        "Support technique",
+        "Animation et engagement",
+        "Traduction et communication",
+        "Assistance aux athlètes"
+      ],
+      "benefices_volontaires": [
+        "Expérience olympique unique",
+        "Formation et compétences",
+        "Tenue officielle",
+        "Certificat de participation",
+        "Réseau et contacts internationaux"
+      ]
+    },
+    "tournee_flamme": {
+      "nom": "Tournée de la Flamme Olympique",
+      "type": "Événement symbolique",
+      "periode": "Mois précédant les Jeux (septembre-octobre 2026)",
+      "parcours": "À travers tout le Sénégal",
+      "objectif": "Mobilisation nationale et célébration de l'événement",
+      "impact": "Engagement de toutes les régions du Sénégal"
+    },
+    "visites_cno": {
+      "nom": "Visites des Comités Nationaux Olympiques",
+      "date": "Novembre 2025",
+      "participants": "45 CNO en visite",
+      "objectif": [
+        "Reconnaissance des sites de compétition",
+        "Préparation logistique",
+        "Coordination avec les équipes nationales"
+      ]
+    },
+    "tournois_tests": {
+      "nom": "Tournois et Compétitions Tests",
+      "objectif": "Tests opérationnels des installations avant les JOJ",
+      "exemples": [
+        "Tournoi international de futsal",
+        "Basketball 3x3 (lors Dakar en Jeux)",
+        "Compétitions d'athlétisme",
+        "Tests de chronométrage"
+      ],
+      "periode": "2025-2026"
+    }
+  },
+  "initiatives_developpement": {
+    "plan_senegal_emergent": {
+      "nom": "Plan Sénégal Émergent (PSE)",
+      "lien_joj": "Les JOJ s'inscrivent dans le PSE comme catalyseur de développement",
+      "vision": "Horizon 2035",
+      "projets_structurants": [
+        "Train Express Régional (TER)",
+        "Bus Rapid Transit (BRT)",
+        "Stade Abdoulaye Wade",
+        "Arène Nationale",
+        "Infrastructures routières"
+      ],
+      "impact_joj": "Accélération des investissements dans la jeunesse et le sport"
+    },
+    "senegal_vision_2050": {
+      "nom": "SENEGAL Vision 2050",
+      "role": "Référentiel des politiques publiques",
+      "lien_joj": "Développement durable et engagement de la jeunesse",
+      "axes": [
+        "Transformation structurelle de l'économie",
+        "Capital humain et développement social",
+        "Gouvernance et État de droit"
+      ]
+    },
+    "progep2": {
+      "nom": "Programme PROGEP2 (ADM)",
+      "financement": ["Banque Mondiale", "État du Sénégal", "FND"],
+      "objectif": "Développement d'infrastructures sportives de proximité",
+      "realisations": [
+        "Terrains multisports de dernière génération",
+        "Proximité des ouvrages d'assainissement",
+        "Gestion communautaire (COLIGEP, CGB)",
+        "Modèle économique vertueux"
+      ],
+      "beneficiaires": "Communautés locales et jeunes"
+    }
+  },
+  "engagement_citoyen": {
+    "opportunites": {
+      "volontariat": "Programme de 6000 volontaires",
+      "emploi": "Offres d'emploi via le comité d'organisation",
+      "partenariats": "AMI et appels d'offres pour entreprises",
+      "sponsoring": "Opportunités de partenariat commercial"
+    },
+    "secteurs_concernes": [
+      "Services",
+      "Technologie",
+      "Construction",
+      "Transport",
+      "Hôtellerie",
+      "Restauration",
+      "Sécurité",
+      "Médias",
+      "Communication"
+    ]
+  }
+}

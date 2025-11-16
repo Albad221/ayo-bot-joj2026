@@ -1,0 +1,122 @@
+{
+  "ambassadeurs_joj_2026": {
+    "description": "Les ambassadeurs des JOJ Dakar 2026 incarnent les valeurs olympiques d'excellence, de diversité et de transformation. Ils inspirent la jeunesse africaine à croire en ses rêves.",
+    "liste": [
+      {
+        "nom": "Abdou Diallo",
+        "profession": "Footballeur professionnel",
+        "role": "Ambassadeur JOJ Dakar 2026",
+        "sport": "Football",
+        "palmares": [
+          "Champion d'Afrique 2022 avec le Sénégal",
+          "Membre de l'équipe nationale sénégalaise"
+        ],
+        "parcours": "Formé en France, passé par des clubs prestigieux dont le PSG",
+        "valeurs": ["Rigueur", "Humilité", "Engagement", "Unité", "Fierté nationale"],
+        "message": "Symbole de l'unité et de la fierté sénégalaises",
+        "impact": "Modèle pour la jeunesse africaine dans le football"
+      },
+      {
+        "nom": "Oumy Diop",
+        "profession": "Nageuse professionnelle",
+        "role": "Ambassadrice JOJ Dakar 2026",
+        "sport": "Natation",
+        "palmares": [
+          "Participation aux Jeux Olympiques de Paris 2024",
+          "Pionnière de la natation sénégalaise"
+        ],
+        "engagement": [
+          "Milite pour l'accès à la natation au Sénégal",
+          "Défend la cause du sport féminin",
+          "Promotion d'une discipline peu médiatisée"
+        ],
+        "valeurs": ["Excellence", "Persévérance", "Égalité des genres"],
+        "message": "Première nageuse sénégalaise aux JO, elle ouvre la voie",
+        "impact": "Inspiration pour les jeunes filles dans les sports aquatiques"
+      },
+      {
+        "nom": "Sophie Gueye",
+        "profession": "Entrepreneure sociale et militante",
+        "role": "Ambassadrice JOJ Dakar 2026",
+        "organisation": "Les Racines de l'Espoir (fondatrice)",
+        "domaine": "Éducation et culture",
+        "projets": [
+          "Projets éducatifs pour la jeunesse",
+          "Renforcement des liens diaspora-continent",
+          "Projets culturels de transmission"
+        ],
+        "valeurs": ["Partage", "Transmission", "Empowerment", "Solidarité"],
+        "message": "Créer des ponts entre les diasporas et les jeunes d'Afrique",
+        "impact": "Développement de la jeunesse par l'éducation et la culture"
+      },
+      {
+        "nom": "Ndèye Awa Diakhate",
+        "profession": "Footballeuse professionnelle",
+        "role": "Ambassadrice JOJ Dakar 2026",
+        "sport": "Football féminin",
+        "equipe": "Équipe nationale sénégalaise de football féminin",
+        "position": "Joueuse clé",
+        "engagement": [
+          "Milite pour la reconnaissance du football féminin au Sénégal",
+          "Promotion du sport féminin",
+          "Combat pour l'égalité dans le sport"
+        ],
+        "valeurs": ["Détermination", "Égalité", "Persévérance"],
+        "message": "Incarne la montée en puissance des femmes dans les sports traditionnellement masculins",
+        "impact": "Modèle pour les jeunes footballeuses africaines"
+      },
+      {
+        "nom": "Dip Doundou Guiss",
+        "profession": "Rappeur et artiste",
+        "role": "Ambassadeur JOJ Dakar 2026",
+        "domaine": "Musique et culture",
+        "genre": "Hip-hop/Rap sénégalais",
+        "themes": [
+          "La jeunesse africaine",
+          "L'identité africaine",
+          "Les rêves et aspirations",
+          "Transformation sociale"
+        ],
+        "engagement": [
+          "Textes engagés sur la société",
+          "Porte-voix de la jeunesse",
+          "Promotion de la culture urbaine sénégalaise"
+        ],
+        "valeurs": ["Créativité", "Conscience sociale", "Authenticité"],
+        "message": "Incarne une jeunesse créative et consciente qui veut transformer la société",
+        "impact": "Inspiration culturelle pour la jeunesse urbaine africaine"
+      }
+    ]
+  },
+  "role_ambassadeurs": {
+    "missions": [
+      "Incarner les valeurs des JOJ (excellence, diversité, transformation)",
+      "Inspirer la jeunesse à croire en ses rêves",
+      "Promouvoir les JOJ Dakar 2026",
+      "Représenter la diversité du sport et de la culture africaine",
+      "Servir de modèles pour la nouvelle génération",
+      "Mobiliser le public autour de l'événement"
+    ],
+    "domaines_representation": [
+      "Sport (football, natation, sports collectifs)",
+      "Culture et musique",
+      "Éducation et entrepreneuriat social",
+      "Égalité des genres",
+      "Excellence et persévérance"
+    ],
+    "impact_attendu": [
+      "Inspiration de milliers de jeunes Africains",
+      "Promotion du sport féminin",
+      "Valorisation de la culture sénégalaise",
+      "Renforcement de la fierté africaine",
+      "Mobilisation de la jeunesse"
+    ]
+  },
+  "valeurs_communes": {
+    "excellence": "Tous incarnent l'excellence dans leur domaine",
+    "engagement": "Fort engagement pour la jeunesse et le développement",
+    "authenticite": "Restent fidèles à leurs racines africaines",
+    "inspiration": "Servent de modèles pour la nouvelle génération",
+    "transformation": "Acteurs du changement social et sportif"
+  }
+}
