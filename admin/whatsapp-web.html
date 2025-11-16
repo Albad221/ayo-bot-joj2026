@@ -770,7 +770,10 @@
     </div>
 
     <script>
-        const API_URL = 'http://127.0.0.1:3002';
+        // Auto-detect API URL based on environment
+        const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? 'http://127.0.0.1:3002'
+            : window.location.origin;
         let sessionId = 'whatsapp-web-' + Date.now();
 
         function formatMarkdown(text) {
